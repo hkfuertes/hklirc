@@ -3,6 +3,9 @@ from LircThread import LircThread
 from WiimoteThread import WiimoteThread
 
 PID_PATH = "../DAEMON_PID"
+MAP_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__),"../standard_map.json"))
+DB_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__),"../hklirc.db"))
+
 
 class SignalHandler():
     def __init__(self, thread_list):
@@ -21,11 +24,12 @@ class SignalHandler():
             thread.updateMapping()
 
 
-if __name__ == "__main__":
-    PID = os.getpid()
-    print("[i] Starting hklirc with pid= "+str(PID))
-    with open(PID_PATH, "w") as f:
-        f.write(str(PID))
+def run(standalone = True):
+    if(standalone):
+        PID = os.getpid()
+        print("[i] Starting hklirc with pid= "+str(PID))
+        with open(PID_PATH, "w") as f:
+            f.write(str(PID))
     
     irThread = LircThread()
     wiiThread = WiimoteThread()
@@ -36,13 +40,17 @@ if __name__ == "__main__":
     signal.signal(signal.SIGTERM, handler.terminate)
     signal.signal(signal.SIGUSR1, handler.update)
 
-    irThread.config(map="../standard_map.json", db="../hklirc.db")
+    irThread.config(map=MAP_FILE, db=DB_FILE)
     irThread.start()
 
-    wiiThread.config(map="../standard_map.json", db="../hklirc.db")
+    wiiThread.config(map=MAP_FILE, db=DB_FILE)
     wiiThread.start()
 
     while not handler.SIGINT:
         continue
     
-    os.remove(PID_PATH)
+    if(standalone):
+        os.remove(PID_PATH)
+
+if __name__ == "__main__":
+    run()
