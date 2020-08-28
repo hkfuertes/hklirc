@@ -1,0 +1,58 @@
+{% extends 'adminltetop/body.html' %}
+
+{% block title %}hklirc{% endblock %}
+{% block page_name %}Remotes{% endblock %}
+{% block page_description %}{{lircd_path}}{% endblock %}
+
+{% block breadcrumb-items %}
+<li class="breadcrumb-item">Infrared</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <div class=" card card-body p-0">
+            <table class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>File</th>
+                    <th>Buttons</th>
+                    <th></th>
+                </tr>
+                {% for name, r in remotes.items %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{name}}</td>
+                    <td>{{r.filename}}</td>
+                    <td>{{r.codes|length}}</td>
+                    <td class="text-right"><a href="{% url 'lircd_remote' r.filename %}"><span
+                                class="badge bg-navy">View</span></a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <p class="card-text">Upload a new remote to the server. <br/>
+                        <span class="text-muted"><i>It has to be lirc compatible.</i></span></p>
+
+                    <div class="form-group">
+                        <!-- <label for="customFile">Custom File</label> -->
+
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="text-right"><a href="#" class="card-link text-navy">Upload</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

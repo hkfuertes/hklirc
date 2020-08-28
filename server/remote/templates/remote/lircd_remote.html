@@ -1,0 +1,41 @@
+{% extends 'adminltetop/body.html' %}
+
+{% block title %}hklirc: lircd/{{ remote.filename }}{% endblock %}
+{% block page_name %}File{% endblock %}
+{% block page_description %}{{ remote.filename }}{% endblock %}
+
+{% block breadcrumb-items %}
+<li class="breadcrumb-item"><a href="{% url 'lircd_remotes' %}" class="text-navy">Infrared</a></li>
+<li class="breadcrumb-item" class="active">{{remote.filename}}</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"><span class="text-muted">Remotes on file:</span></span>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for name, r in remotes.items %}
+                <li class="list-group-item">{{ name }}
+
+                    <span class="float-right badge bg-navy">{{r.codes | length}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-body text-right">
+                <a href="#" class="card-link text-danger">Remove</a>
+                <a href="{% url 'lircd_remote_download' remote.filename %}" class="card-link text-navy">Download</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-8">
+        <div class="card card-body">
+            <pre>{{remote.config}}</pre>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

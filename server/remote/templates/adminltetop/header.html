@@ -1,0 +1,71 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            <span class="brand-text font-weight-light"><i class="fas fa-gamepad"></i> hklirc</span>
+        </a>
+
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="{% url 'lircd_remotes' %}" class="nav-link">Infrared</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Bluetooth</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'mapping_index' %}" class="nav-link">Mappings</a>
+                </li>
+                {% comment %}
+                <li class="nav-item dropdown">
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        class="nav-link dropdown-toggle"><i class="fas fa-folder-open"></i> Mantenimientos</a>
+                    <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="#" class="dropdown-item"><i class="fas fa-truck-loading"></i> Categorías</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fas fa-boxes"></i> Productos</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fas fa-users"></i> Clientes</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                    </ul>
+                </li>
+                {% endcomment %}
+            </ul>
+        </div>
+        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fas fa-sliders-h"></i>
+                    <!--<span class="badge badge-warning navbar-badge">15</span>-->
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    {% comment %}
+                    <span class="dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    {% endcomment %}
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-check mr-2"></i> Apply
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-power-off mr-2"></i>Reboot
+                    </a>
+                    {% comment %}
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-file mr-2"></i> 3 new reports
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    {% endcomment %}
+                    {% comment %}
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    {% endcomment %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

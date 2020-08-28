@@ -1,0 +1,18 @@
+<style>
+    .no-footer {
+    background: #f4f6f9;
+    border-top: 0 !important; 
+    padding: 1rem;
+}
+</style>
+
+<footer class="main-footer no-footer">
+    <div class="float-right d-none d-sm-block">
+    {% block footer_right %}{% endblock %}
+</div>
+
+{% block footer_left %}
+{% block legal %}
+{% endblock %}
+{% endblock %}
+</footer>

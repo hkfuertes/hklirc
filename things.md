@@ -1,0 +1,4 @@
+- https://github.com/d-demirci/django-adminlte3
+- https://django-bootstrap4.readthedocs.io/en/latest/quickstart.html#example-template
+- https://stackoverflow.com/questions/473620/how-do-you-create-a-daemon-in-python
+- https://stackoverflow.com/questions/4637420/efficient-python-daemon

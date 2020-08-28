@@ -1,0 +1,47 @@
+{% extends 'adminltetop/body.html' %}
+
+{% block title %}hklirc{% endblock %}
+{% block page_name %}Mappings{% endblock %}
+{% block page_description %}{% endblock %}
+
+{% block breadcrumb-items %}
+<li class="breadcrumb-item">Mappings</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class=" card card-body p-0">
+            <table class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+                {% for m in mappings %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td><a href="{% url 'mapping_detail' m.id %}" class="text-navy">{{m.name}}</a></td>
+                    <td>
+                        {% if m.ir %}
+                        Infrared (Lirc)
+                        {% else %}
+                        Bluetooth (Wiimote)
+                        {% endif %}
+                    </td>
+                    <td class="text-right">
+                        {% if m.active %}
+                        <a href="#">
+                            <span class="badge bg-navy">Active</span>
+                        </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
