@@ -1,8 +1,14 @@
 {% extends 'adminltetop/body.html' %}
 
 {% block title %}Mappings{% endblock %}
-{% block page_name %}Mapping{% endblock %}
-{% block page_description %}{{ mapping.name }}{% endblock %}
+{% block page_name %}{{ mapping.name }}{% endblock %}
+{% block page_description %}
+{% if mapping.ir %}
+Infrared (Lirc)
+{% else %}
+Bluetooth (Wiimote)
+{% endif %}
+{% endblock %}
 
 {% block breadcrumb-items %}
 <li class="breadcrumb-item"><a href="{% url 'mapping_index' %}" class="text-navy">Mappings</a></li>
@@ -28,7 +34,7 @@
                         </div>
                         <div class="col-sm-5">
                             <div class="form-group input-group">
-                                <select name="mapping[{{key_code}}]" class="form-control custom-select">
+                                <select name="mapping[{{key}}]" class="form-control custom-select">
                                     <!-- If it is not yet mapped, we select the empty one -->
                                     <option {% if key not in mappings_codes %} selected {% endif %}></option>
                                     {% for key_code in available_keys %}
@@ -54,7 +60,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-4">
-                <a href="#" class="btn btn-block btn-primary bg-navy">Save</a><br/>
+                <a href="#" class="btn btn-block bg-navy">Save</a><br/>
 
         <div class="card">
             <div class="card-header">
