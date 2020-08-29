@@ -5,9 +5,12 @@ from os import listdir
 from os.path import isfile, join, basename, exists
 import json, re
 from ..models import Mapping
+from ..util.LircdParser import parse as parseLirc
+from django.template.defaulttags import register
 
-# Create your views here.
-# form: https://www.youtube.com/watch?v=pH6X79wIgyY
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
 
 def loadMap():
     return {}
@@ -19,12 +22,20 @@ def index(request):
     })
 
 def detail(request, mapping_id):
+    mypath = ConfigSettings.LIRCD_PATH
+    remotes = parseLirc(mypath)
+
+    available_keys = []
+    for _, value in remotes.items():
+        for key in value['codes']:
+            if key not in available_keys:
+                available_keys.append(key)
+    print(available_keys)
+
     mapping = get_object_or_404(Mapping, pk=mapping_id)
-    mapping_codes = loadMap()
-    for key, value in json.loads(mapping.config).items():
-        mapping_codes[key] = value
-    print(mapping_codes)
     return render(request, "remote/mapping_detail.html", {
         "mapping": mapping,
-        "mapping_codes": mapping_codes
+        "mapping_codes": json.loads(mapping.config),
+        "remotes": remotes,
+        "available_keys": available_keys
     })

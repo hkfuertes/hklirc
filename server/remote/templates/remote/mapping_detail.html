@@ -11,16 +11,62 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-8">
         <div class="card">
             <div class="card-header">
                 <span class="card-title"><span class="text-muted">Mapping</span></span>
             </div>
             <ul class="list-group list-group-flush">
-                {% for key, value in mapping_codes.items %}
-                <li class="list-group-item">{{ key }}
+                {% for key in available_keys %}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            {{key}}
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-arrow-right align-bottom"></i>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group input-group">
+                                <select name="mapping[{{key_code}}]" class="form-control custom-select">
+                                    <!-- If it is not yet mapped, we select the empty one -->
+                                    <option {% if key not in mappings_codes %} selected {% endif %}></option>
+                                    {% for key_code in available_keys %}
+                                    {% if mapping_codes|get_item:key == key_code %}
+                                    <option selected>{{key_code}}</option>
+                                    {% else %}
+                                    <option>{{key_code}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <!--
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-navy btn-flat"><i
+                                            class="fas fa-plus"></i></button>
+                                </span>
+                            -->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+                <a href="#" class="btn btn-block btn-primary bg-navy">Save</a><br/>
 
-                    <span class="float-right badge bg-navy">{{value}}</span>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"><span class="text-muted">Remotes & Keys</span></span>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for key, value in remotes.items %}
+                <li class="list-group-item">{{ key }} <br />
+
+                    {% for key_code in value.codes %}
+                    <span class="badge bg-navy">{{key_code}}</span>
+                    {% endfor %}
                 </li>
                 {% endfor %}
             </ul>
@@ -34,4 +80,7 @@
     {% endcomment %}
 </div>
 
+<script>
+    $('option:selected').each(function () { $(this).prop('selected', true); });
+</script>
 {% endblock %}
