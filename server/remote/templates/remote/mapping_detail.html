@@ -2,13 +2,7 @@
 
 {% block title %}Mappings{% endblock %}
 {% block page_name %}{{ mapping.name }}{% endblock %}
-{% block page_description %}
-{% if mapping.ir %}
-Infrared (Lirc)
-{% else %}
-Bluetooth (Wiimote)
-{% endif %}
-{% endblock %}
+{% block page_description %}Edit{% endblock %}
 
 {% block breadcrumb-items %}
 <li class="breadcrumb-item"><a href="{% url 'mapping_index' %}" class="text-navy">Mappings</a></li>
