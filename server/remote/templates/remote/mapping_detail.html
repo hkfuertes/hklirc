@@ -20,10 +20,33 @@ Bluetooth (Wiimote)
     {% csrf_token %}
     <div class="row">
         <div class="col-xs-12 col-md-8">
-
             <div class="card">
                 <div class="card-header">
-                    <span class="card-title"><span class="text-muted">Mapping</span></span>
+                    <span class="card-title"><span class="text-muted">General</span></span>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <input class="form-control" type="text" placeholder="Name" name="general_name"
+                                value="{{mapping.name}}">
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <select class="custom-select" name="general_platform">
+                                    {% for key, value in choice_names.items %}
+                                  <option value="{{key}}" {% if mapping.platform == key %} selected="" {% endif %}>{{value}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title"><span class="text-muted">Keys</span></span>
                 </div>
                 <ul class="list-group list-group-flush">
                     {% for key in available_keys %}

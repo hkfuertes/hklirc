@@ -8,4 +8,5 @@ urlpatterns = [
     path('lirc/<remote_file>/download', views_lirc.lircd_remote_download, name="lircd_remote_download"),
     path('mapping', views_mapping.index, name="mapping_index"),
     path('mapping/<mapping_id>', views_mapping.detail, name="mapping_detail"),
+    path('mapping/<mapping_id>/activate', views_mapping.activate, name="mapping_activate"),
 ]

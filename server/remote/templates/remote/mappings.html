@@ -24,16 +24,14 @@
                     <td>{{forloop.counter}}</td>
                     <td><a href="{% url 'mapping_detail' m.id %}" class="text-navy">{{m.name}}</a></td>
                     <td>
-                        {% if m.ir %}
-                        Infrared (Lirc)
-                        {% else %}
-                        Bluetooth (Wiimote)
-                        {% endif %}
+                        {{ choice_names|get_item:m.platform}}
                     </td>
                     <td class="text-right">
                         {% if m.active %}
-                        <a href="#">
                             <span class="badge bg-navy">Active</span>
+                        {% else %}
+                        <a href="{% url 'mapping_activate' m.id %}">
+                            <span class="badge text-navy">Activate</span>
                         </a>
                         {% endif %}
                     </td>
