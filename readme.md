@@ -3,7 +3,7 @@
 - https://django-bootstrap4.readthedocs.io/en/latest/quickstart.html#example-template
 - https://stackoverflow.com/questions/473620/how-do-you-create-a-daemon-in-python
 - https://stackoverflow.com/questions/4637420/efficient-python-daemon
--https://www.instructables.com/id/Easy-Setup-IR-Remote-Control-Using-LIRC-for-the-Ra/
+- https://www.instructables.com/id/Easy-Setup-IR-Remote-Control-Using-LIRC-for-the-Ra/
 - https://www.instructables.com/id/Setup-IR-Remote-Control-Using-LIRC-for-the-Raspber/
 - https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/sony/SCPH-10150.lircd.conf
 
