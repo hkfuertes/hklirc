@@ -10,3 +10,4 @@
 - python manage.py makemigrations remote & migrate
 - python manage.py createsuperuser
 - for now create a mapping from admin app (django)
+- add your servers' ip to allowedhosts in django
