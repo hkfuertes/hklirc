@@ -1,5 +1,5 @@
 ## Install Steps
-- For django app see this: [server](server/readme.md)
+- For django app see [server](server/readme.md) folder.
 - Install virtualenv and python3-dev to be able to compile and install python3-cwiid
 - Enable the gpio-ir pins in config.txt (in my case pin 14)
 
