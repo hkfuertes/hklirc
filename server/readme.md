@@ -4,6 +4,7 @@
 sudo apt update && sudo apt install -y virtualenv
 virtualenv -p python3 venv
 source venv/bin/activate
+pip install -r requirements.txt
 python manage.py makemigrations remote
 python manage.py migrate
 python manage.py createsuperuser
