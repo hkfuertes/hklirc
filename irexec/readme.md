@@ -7,4 +7,4 @@
 - Add any remote to `/etc/lirc/lircd.conf.d/` and reboot to make lircd pick them.
 - Generate a `all_codes.conf` config file with `configGenerator/genconf.py`
 - Run `irexec all_codes.conf` with the `-d` option to have it in background.
-  > _Need to come with a linux service for this!_
+  > _Need to come up with a linux service for this!_
