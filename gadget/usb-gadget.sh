@@ -68,7 +68,7 @@ ln -s ${gadget}/functions/hid.usb0 ${gadget}/configs/c.1/
 ls /sys/class/udc > ${gadget}/UDC
 udevadm settle -t 5 || :
 ifup usb0
-#ifconfig usb0 10.42.0.1 netmask 255.255.255.252 up
+ifconfig usb0 10.42.0.1 netmask 255.255.255.252 up
 #service dnsmasq restart
 
 chmod 777 /dev/hidg0
