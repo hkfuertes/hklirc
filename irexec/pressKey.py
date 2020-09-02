@@ -31,12 +31,17 @@ if __name__ == "__main__":
     parser.add_argument('--dev', dest='device',default="/dev/hidg0", help='device to be used (defaults to /dev/hidg0)')
     args = parser.parse_args()
 
+    key_code = args.code
     KEY_MAP = loadMap('../standard_map.json')
     user_mapping = getMappingFromDB('../hklirc.db')
-    if(args.code in KEY_MAP):
-        if(KEY_MAP[args.code]['keyboard']):
-            sendKey(int(KEY_MAP[args.code]['value'],0), args.device)
+    
+    if (key_code in user_mapping):
+        key_code = user_mapping[key_code]
+
+    if(key_code in KEY_MAP):
+        if(KEY_MAP[key_code]['keyboard']):
+            sendKey(int(KEY_MAP[key_code]['value'],0), args.device)
         else:
-            sendMultimediaKey(int(KEY_MAP[args.code]['value'],0), args.device)
+            sendMultimediaKey(int(KEY_MAP[key_code]['value'],0), args.device)
 
     #print (args.code + args.device)
