@@ -8,8 +8,6 @@ from ..models import Mapping
 from ..util.LircdParser import parse as parseLirc
 from django.template.defaulttags import register
 
-WIIMOTE_CODES = ['KEY_LEFT', 'KEY_RIGHT', 'KEY_UP', 'KEY_DOWN','KEY_1','KEY_2','KEY_A','KEY_B', 'KEY_HOME','KEY_VOLUMEUP','KEY_VOLUMEDOWN']
-
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)
@@ -24,21 +22,16 @@ def index(request):
     mappings = Mapping.objects.all()
     return render(request, "remote/mappings.html", {
         "mappings": mappings,
-        "choice_names": Mapping.PLATFORMS
     })
 
 def detail(request, mapping_id):
     mapping = get_object_or_404(Mapping, pk=mapping_id)
-    print(mapping.platform)
     if (request.POST.get("submitted", None) is not None):
         new_mapping = {}
         print(request.POST.dict())
         for key, value in request.POST.dict().items():
             if key.startswith("mapping_") and value is not "":
                 new_mapping[key.replace("mapping_","")] = value
-            if key == "general_platform":
-                mapping.platform = value
-        # print(new_mapping)
         mapping.config = json.dumps(new_mapping)
         mapping.save()
         return redirect('mapping_index')
@@ -46,8 +39,6 @@ def detail(request, mapping_id):
 
     mypath = ConfigSettings.LIRCD_PATH
     remotes = parseLirc(mypath)
-    remotes['Wiimote'] = {'name': 'Wiimote', 'codes': WIIMOTE_CODES}
-
     available_keys = []
     for _, value in remotes.items():
         for key in value['codes']:
@@ -60,8 +51,7 @@ def detail(request, mapping_id):
         "mapping_codes": json.loads(mapping.config),
         "remotes": remotes,
         "available_keys": available_keys,
-        "all_keys": loadMap(str(ConfigSettings.BASE_DIR) + "/../standard_map.json"),
-        "choice_names": Mapping.PLATFORMS
+        "all_keys": loadMap(str(ConfigSettings.BASE_DIR) + "/../standard_map.json")
     })
 
 def activate(request, mapping_id):

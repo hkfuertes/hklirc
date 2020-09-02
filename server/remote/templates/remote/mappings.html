@@ -24,7 +24,7 @@
                     <td>{{forloop.counter}}</td>
                     <td><a href="{% url 'mapping_detail' m.id %}" class="text-navy">{{m.name}}</a></td>
                     <td>
-                        {{ choice_names|get_item:m.platform}}
+                        Infrared (Lirc)
                     </td>
                     <td class="text-right">
                         {% if m.active %}
