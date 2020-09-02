@@ -35,6 +35,7 @@ if __name__ == "__main__":
     KEY_MAP = loadMap('../standard_map.json')
     user_mapping = getMappingFromDB('../hklirc.db')
     
+    # Remap with user mapping
     if (key_code in user_mapping):
         key_code = user_mapping[key_code]
 
@@ -43,5 +44,3 @@ if __name__ == "__main__":
             sendKey(int(KEY_MAP[key_code]['value'],0), args.device)
         else:
             sendMultimediaKey(int(KEY_MAP[key_code]['value'],0), args.device)
-
-    #print (args.code + args.device)

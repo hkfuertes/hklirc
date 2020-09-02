@@ -9,6 +9,7 @@ def getMappingFromDB(database_path):
         cursor.execute('SELECT config FROM '+TABLE_NAME + " WHERE active = 1")
         data = json.loads(cursor.fetchone()[0])
     except (sqlite3.OperationalError, TypeError):
+        # No database/table or table with no elements
         data = {}
     cursor.close()
     return data
