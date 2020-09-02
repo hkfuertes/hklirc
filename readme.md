@@ -1,7 +1,7 @@
 ## Install Steps
-- For django app see [server](server/readme.md) folder.
-- Install virtualenv and python3-dev to be able to compile and install python3-cwiid
-- Enable the gpio-ir pins in config.txt (in my case pin 14)
+- For django app see [server](server) folder.
+- For daemon (using `irexec`) see [daemon](daemon) folder.
+- For USB Gadget configuration, copy `gadget\usb-gadget.sh` to `/usr/bin/` and follow the steps in `gadget/usb-gadget-install.sh`.
 
 
 ### Helpful links
