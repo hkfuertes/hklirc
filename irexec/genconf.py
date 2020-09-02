@@ -26,7 +26,7 @@ def generate(filepath):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Creates a LIRC config for all available keys in remotes.')
-    parser.add_argument('--config', metavar='config', help=' config file to be created (default in ../all_codes.conf)', default="../all_codes.conf")
+    parser.add_argument('--config', metavar='config', help=' config file to be created (default in all_codes.conf)', default="all_codes.conf")
     args = parser.parse_args()
 
     generate(args.config)
