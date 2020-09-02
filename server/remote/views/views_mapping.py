@@ -25,13 +25,19 @@ def index(request):
     })
 
 def detail(request, mapping_id):
-    mapping = get_object_or_404(Mapping, pk=mapping_id)
+    if mapping_id == 'NEW':
+        mapping = Mapping(config="{}")
+    else:
+        mapping = get_object_or_404(Mapping, pk=mapping_id)
+    
     if (request.POST.get("submitted", None) is not None):
         new_mapping = {}
         print(request.POST.dict())
         for key, value in request.POST.dict().items():
             if key.startswith("mapping_") and value is not "":
                 new_mapping[key.replace("mapping_","")] = value
+            if key == 'general_name':
+                mapping.name = value
         mapping.config = json.dumps(new_mapping)
         mapping.save()
         return redirect('mapping_index')
