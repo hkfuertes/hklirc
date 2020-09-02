@@ -17,17 +17,16 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>File</th>
-                    <th>Buttons</th>
-                    <th></th>
+                    <th class="text-right">Buttons</th>
                 </tr>
                 {% for name, r in remotes.items %}
                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td>{{name}}</td>
+                    <td>
+                        <a href="{% url 'lircd_remote' r.filename %}" class="text-navy">{{name}}</a>
+                    </td>
                     <td>{{r.filename}}</td>
-                    <td>{{r.codes|length}}</td>
-                    <td class="text-right"><a href="{% url 'lircd_remote' r.filename %}"><span
-                                class="badge bg-navy">View</span></a></td>
+                    <td class="text-right">{{r.codes|length}}</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -39,7 +38,8 @@
                 <form>
                     <p class="card-text">Upload a new remote to the server. <br />
                         <span class="text-muted"><i>It has to be lirc <a
-                                    href="https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/" target="_blank">compatible</a></i></span>
+                                    href="https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/"
+                                    target="_blank">compatible</a></i></span>
                     </p>
                     <div class="form-group">
                         <!-- <label for="customFile">Custom File</label> -->

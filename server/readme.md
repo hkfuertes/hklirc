@@ -15,6 +15,7 @@ python manage.py createsuperuser
 
 ## TODO
 - Upload lircd files
+- remove lirc files
 - Create mappings
 - dynamic mapping view
 - Message for the unmapped keys (+ option?)
