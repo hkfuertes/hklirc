@@ -12,3 +12,4 @@
 - https://www.instructables.com/id/Easy-Setup-IR-Remote-Control-Using-LIRC-for-the-Ra/
 - https://www.instructables.com/id/Setup-IR-Remote-Control-Using-LIRC-for-the-Raspber/
 - https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/sony/SCPH-10150.lircd.conf
+- https://www.youtube.com/watch?v=3ndgLXz4e90
