@@ -16,13 +16,13 @@ def write_report(report, file = '/dev/hidg0' ):
     with open(file, 'rb+') as fd:
         fd.write(report.encode())
 
-def sendKey(key):
-    write_report(KEYBOARD_ID+NULL_CHAR*2+chr(key)+NULL_CHAR*5)
-    write_report(KEYBOARD_ID+NULL_CHAR*8)
+def sendKey(key, file = '/dev/hidg0'):
+    write_report(KEYBOARD_ID+NULL_CHAR*2+chr(key)+NULL_CHAR*5, file)
+    write_report(KEYBOARD_ID+NULL_CHAR*8, file)
 
-def sendMultimediaKey(key):
-    write_report(CONSUMER_ID+chr(key)+NULL_CHAR)
-    write_report(CONSUMER_ID+NULL_CHAR*2)
+def sendMultimediaKey(key, file = '/dev/hidg0'):
+    write_report(CONSUMER_ID+chr(key)+NULL_CHAR, file)
+    write_report(CONSUMER_ID+NULL_CHAR*2, file)
 #############################################################################################
 
 if __name__ == "__main__":
@@ -35,8 +35,8 @@ if __name__ == "__main__":
     user_mapping = getMappingFromDB('../hklirc.db')
     if(args.code in KEY_MAP):
         if(KEY_MAP[args.code]['keyboard']):
-            sendKey(int(KEY_MAP[args.code]['value'],0))
+            sendKey(int(KEY_MAP[args.code]['value'],0), args.device)
         else:
-            sendMultimediaKey(int(KEY_MAP[args.code]['value'],0))
+            sendMultimediaKey(int(KEY_MAP[args.code]['value'],0), args.device)
 
     #print (args.code + args.device)
