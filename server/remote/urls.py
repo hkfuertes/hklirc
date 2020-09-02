@@ -9,4 +9,5 @@ urlpatterns = [
     path('mapping', views_mapping.index, name="mapping_index"),
     path('mapping/<mapping_id>', views_mapping.detail, name="mapping_detail"),
     path('mapping/<mapping_id>/activate', views_mapping.activate, name="mapping_activate"),
+    path('mapping/<mapping_id>/delete', views_mapping.delete, name="mapping_delete"),
 ]

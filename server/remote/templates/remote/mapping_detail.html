@@ -84,7 +84,7 @@
             {% endfor %}
         </ul>
     </div>
-    <a class="btn btn-block btn-danger" href="#">Delete</a>
+    <a class="btn btn-block btn-danger" href="{% url 'mapping_delete' mapping.id %}">Delete</a>
 </div>
 {% comment %}
 <div class="col-xs-12 col-md-8">

@@ -67,5 +67,9 @@ def activate(request, mapping_id):
         m.active = (str(m.id) == str(mapping_id))
         m.save()
 
-    # signal SIGUSR to process to refresh the mapping in daemon!
+    return redirect('mapping_index')
+
+def delete(request, mapping_id):
+    mapping = get_object_or_404(Mapping, pk=mapping_id)
+    mapping.delete()
     return redirect('mapping_index')
