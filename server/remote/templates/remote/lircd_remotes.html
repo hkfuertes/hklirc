@@ -35,25 +35,33 @@
     <div class="col-xs-12 col-md-4">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form method="POST" enctype="multipart/form-data"> 
+                    {% csrf_token %} 
                     <p class="card-text">Upload a new remote to the server. <br />
                         <span class="text-muted"><i>It has to be lirc <a
                                     href="https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/"
                                     target="_blank" class="text-navy">compatible</a></i></span>
                     </p>
                     <div class="form-group">
-                        <!-- <label for="customFile">Custom File</label> -->
-
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <input type="file" name="file" class="custom-file-input" id="id_file">
+                            <label class="custom-file-label" for="id_file">Choose file</label>
                         </div>
                     </div>
-                    <div class="text-right"><a href="#" class="card-link text-navy">Upload</a></div>
+                    <div class="text-right"><input type="submit" class="card-link text-navy" name="upload" value="Upload"/></div>
                 </form>
             </div>
         </div>
+
     </div>
 </div>
 
+<script>
+    $('#id_file').on('change',function(){
+        //get the file name
+        var fileName = $(this).val().split("\\").pop();
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+</script>
 {% endblock %}
