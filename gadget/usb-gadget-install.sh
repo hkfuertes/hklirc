@@ -9,6 +9,7 @@ echo "dwc2" | sudo tee -a /etc/modules
 echo "libcomposite" | sudo tee -a /etc/modules
 
 # We need to copy the usb-gadget.sh first to the right location.
+sudo cp ./usb-gadget.sh /usr/bin/usb-gadget.sh
 sudo chmod +x /usr/bin/usb-gadget.sh
 sudo sed -i -e '$i \/usr/bin/usb-gadget.sh\n' /etc/rc.local
 #sudo echo "/usr/bin/usb-gadget.sh" >> /etc/rc.local
