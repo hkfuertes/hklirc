@@ -1,15 +1,10 @@
 [Unit]
-Description=hklircd system service
-After=network.target
+Description=hklirc daemon
 
 [Service]
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
+Type=simple
 User=pi
-WorkingDirectory=/home/pi/hklirc/daemon/
-ExecStart=/usr/bin/python3 /home/pi/hklirc/daemon/hklircd.py start
-ExecStop=/usr/bin/python3 /home/pi/hklirc/daemon/hklircd.py stop
+ExecStart=/home/pi/hklirc/daemon_python/hklircd.sh
 
 [Install]
 WantedBy=multi-user.target

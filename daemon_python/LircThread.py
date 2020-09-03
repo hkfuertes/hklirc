@@ -13,8 +13,11 @@ CONSUMER_ID = chr(0x02)
 NULL_CHAR = chr(0)
 
 def write_report(report, file = '/dev/hidg0' ):
-    with open(file, 'rb+') as fd:
-        fd.write(report.encode())
+    try:
+        with open(file, 'rb+') as fd:
+            fd.write(report.encode())
+    except BlockingIOError:
+        return
 
 def sendKey(key, file = '/dev/hidg0'):
     write_report(KEYBOARD_ID+NULL_CHAR*2+chr(key)+NULL_CHAR*5, file)
@@ -95,9 +98,9 @@ class LircThread(threading.Thread):
                 if (command in KEY_MAP): 
                     currentMap = KEY_MAP[command]
                     print(currentMap)
-                    '''
+                    
                     if (currentMap['keyboard']):
                         sendKey(int(currentMap['value'],0))
                     else:
                         sendMultimediaKey(int(currentMap['value'],0))
-                    '''
+                    
