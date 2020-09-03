@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.conf import settings as ConfigSettings
-from os import listdir
+from os import listdir, kill
 from os.path import isfile, join, basename, exists
 import json, re
 from ..models import Mapping
 from ..util.LircdParser import parse as parseLirc
 from django.template.defaulttags import register
+import signal
 
 @register.filter
 def get_item(dictionary, key):
@@ -67,9 +68,23 @@ def activate(request, mapping_id):
         m.active = (str(m.id) == str(mapping_id))
         m.save()
 
+    # We update the mapping in the daemon
+    signal_daemon(ConfigSettings.DAEMON_FILE)
+
     return redirect('mapping_index')
 
 def delete(request, mapping_id):
     mapping = get_object_or_404(Mapping, pk=mapping_id)
     mapping.delete()
     return redirect('mapping_index')
+
+def update_map(request):
+    # We update the mapping in the daemon
+    signal_daemon(ConfigSettings.DAEMON_FILE)
+    return redirect('index')
+
+
+def signal_daemon(pid_file):
+    with open(pid_file,'r') as f:
+        pid = int(f.read())
+        kill(pid, signal.SIGUSR1)

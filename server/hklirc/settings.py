@@ -133,5 +133,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR) + "/static"
 STATICFILES_DIRS = [('dist', os.path.join(BASE_DIR, 'dist')),] # new
 
+DAEMON_FILE = os.path.join(BASE_DIR, '../DAEMON_PID')
+
 # Custom Variables
 LIRCD_PATH = "/etc/lirc/lircd.conf.d/"
