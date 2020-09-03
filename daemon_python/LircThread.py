@@ -77,24 +77,27 @@ class LircThread(threading.Thread):
 
         # Loading standard Keymap
         KEY_MAP = loadMap(self.map)
+
         # Reading user mapping from DB
         self.updateMapping()
 
         # Init IR connection
         conn = RawConnection()
-        #print("[i] Starting Up...")
+
         while not self._stop_event.is_set():
             command = self.getIrCommand(conn)
-            
-            # We override with the usermapping command
-            if (command in self.user_mapping):
-                    command = self.user_mapping[command]
-            
-            # We trigger the proper KEY
-            if (command is not None) and (command in KEY_MAP): 
-                currentMap = KEY_MAP[command]
-                print(currentMap)
-                if (currentMap['keyboard']):
-                    sendKey(int(currentMap['value'],0))
-                else:
-                    sendMultimediaKey(int(currentMap['value'],0))
+            if (command is not None):
+                # We override with the usermapping command
+                if (command in self.user_mapping):
+                        command = self.user_mapping[command]
+                
+                # We trigger the proper KEY
+                if (command in KEY_MAP): 
+                    currentMap = KEY_MAP[command]
+                    print(currentMap)
+                    '''
+                    if (currentMap['keyboard']):
+                        sendKey(int(currentMap['value'],0))
+                    else:
+                        sendMultimediaKey(int(currentMap['value'],0))
+                    '''
