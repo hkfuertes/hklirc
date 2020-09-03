@@ -1,8 +1,29 @@
 import threading, time
 from lirc import RawConnection
-from Helpers.MappingHelper import loadMap, getMappingFromDB
-from Helpers.HidHelper import sendKey, sendMultimediaKey
+from MappingHelper import loadMap, getMappingFromDB
 
+############################################################################## HID HELPERS ##
+# Descriptor:
+#   05010906a1018501050719e029e71500250175019508810295017508810395057501050819012905910295017
+#   503910395067508150025650507190029658100c0050C0901A1018502050C150025017501950709B509B609B7
+#   09CD09E209E909EA810295068101C0
+
+KEYBOARD_ID = chr(0x01)
+CONSUMER_ID = chr(0x02)
+NULL_CHAR = chr(0)
+
+def write_report(report, file = '/dev/hidg0' ):
+    with open(file, 'rb+') as fd:
+        fd.write(report.encode())
+
+def sendKey(key, file = '/dev/hidg0'):
+    write_report(KEYBOARD_ID+NULL_CHAR*2+chr(key)+NULL_CHAR*5, file)
+    write_report(KEYBOARD_ID+NULL_CHAR*8, file)
+
+def sendMultimediaKey(key, file = '/dev/hidg0'):
+    write_report(CONSUMER_ID+chr(key)+NULL_CHAR, file)
+    write_report(CONSUMER_ID+NULL_CHAR*2, file)
+#############################################################################################
 
 class LircThread(threading.Thread):
     """Thread class with a stop() method. The thread itself has to check

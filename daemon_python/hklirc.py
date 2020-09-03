@@ -1,6 +1,6 @@
 import signal, os
 from LircThread import LircThread
-from WiimoteThread import WiimoteThread
+#from WiimoteThread import WiimoteThread
 
 PID_PATH = "../DAEMON_PID"
 MAP_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__),"../standard_map.json"))
@@ -32,10 +32,10 @@ def run(standalone = True):
             f.write(str(PID))
     
     irThread = LircThread()
-    wiiThread = WiimoteThread()
+    #wiiThread = WiimoteThread()
 
     # Prepare to receive SIGINT, SIGTERM, SIGUSR1
-    handler = SignalHandler([irThread, wiiThread])
+    handler = SignalHandler([irThread])
     signal.signal(signal.SIGINT, handler.terminate)
     signal.signal(signal.SIGTERM, handler.terminate)
     signal.signal(signal.SIGUSR1, handler.update)
@@ -43,8 +43,8 @@ def run(standalone = True):
     irThread.config(map=MAP_FILE, db=DB_FILE)
     irThread.start()
 
-    wiiThread.config(map=MAP_FILE, db=DB_FILE)
-    wiiThread.start()
+    #wiiThread.config(map=MAP_FILE, db=DB_FILE)
+    #wiiThread.start()
 
     while not handler.SIGINT:
         continue
