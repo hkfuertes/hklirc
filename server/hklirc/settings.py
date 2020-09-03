@@ -130,8 +130,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = str(BASE_DIR) + "/tstatic"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] # new
+STATIC_ROOT = str(BASE_DIR) + "/static"
+STATICFILES_DIRS = [('dist', os.path.join(BASE_DIR, 'dist')),] # new
 
 # Custom Variables
 LIRCD_PATH = "/etc/lirc/lircd.conf.d/"
