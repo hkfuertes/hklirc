@@ -19,3 +19,4 @@ sudo chmod 777 /etc/lirc/lircd.conf.d/
 ## TODO
 - Dynamic mapping view, only showing modded map and a plus button.
 - Homepage
+- deploy with gunicorn + nginx!
