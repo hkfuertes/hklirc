@@ -41,6 +41,9 @@ def detail(request, mapping_id):
                 mapping.name = value
         mapping.config = json.dumps(new_mapping)
         mapping.save()
+        if (mapping.active):
+            # We update the mapping in the daemon
+            signal_daemon(ConfigSettings.DAEMON_FILE)
         return redirect('mapping_index')
     
 
