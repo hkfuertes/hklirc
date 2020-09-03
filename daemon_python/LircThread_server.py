@@ -1,6 +1,10 @@
-import threading, time
+import os, signal
 from lirc import RawConnection
 from MappingHelper import loadMap, getMappingFromDB
+
+PID_PATH = "../DAEMON_PID"
+MAP_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__),"../standard_map.json"))
+DB_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__),"../hklirc.db"))
 
 ############################################################################## HID HELPERS ##
 # Descriptor:
@@ -25,31 +29,21 @@ def sendMultimediaKey(key, file = '/dev/hidg0'):
     write_report(CONSUMER_ID+NULL_CHAR*2, file)
 #############################################################################################
 
-class LircThread(threading.Thread):
+class hklircd():
     """Thread class with a stop() method. The thread itself has to check
     regularly for the stopped() condition."""
 
     map = None
     db = None
     user_mapping = {}
+    stopped = False
 
-    def __init__(self):
-        super(LircThread, self).__init__()
-        self._stop_event = threading.Event()
-
-    def config(self, map, db):
+    def __init__(self, map, db):
         self.map = map
         self.db = db
     
     def updateMapping(self):
         self.user_mapping = getMappingFromDB(self.db)
-
-    def stop(self):
-        self._stop_event.set()
-
-    def join(self, *args, **kwargs):
-        self.stop()
-        super(LircThread,self).join(*args, **kwargs)
 
     def getIrCommand(self, conn):
         try:
@@ -82,19 +76,42 @@ class LircThread(threading.Thread):
 
         # Init IR connection
         conn = RawConnection()
-        #print("[i] Starting Up...")
-        while not self._stop_event.is_set():
+
+        while True:
             command = self.getIrCommand(conn)
-            
-            # We override with the usermapping command
-            if (command in self.user_mapping):
+            if (command is not None):
+                print(command)
+                if (command in self.user_mapping):
                     command = self.user_mapping[command]
             
-            # We trigger the proper KEY
-            if (command is not None) and (command in KEY_MAP): 
-                currentMap = KEY_MAP[command]
-                print(currentMap)
-                if (currentMap['keyboard']):
-                    sendKey(int(currentMap['value'],0))
-                else:
-                    sendMultimediaKey(int(currentMap['value'],0))
+                # We trigger the proper KEY
+                if (command in KEY_MAP): 
+                    currentMap = KEY_MAP[command]
+                    print(currentMap)
+                    if (currentMap['keyboard']):
+                        sendKey(int(currentMap['value'],0))
+                    else:
+                        sendMultimediaKey(int(currentMap['value'],0))
+
+if __name__ == "__main__":
+    PID = os.getpid()
+    print("[i] Starting hklirc with pid = "+str(PID))
+    with open(PID_PATH, "w+") as f:
+        f.write(str(PID))
+    
+    print(MAP_FILE); print(DB_FILE)
+
+    server = hklircd(map=MAP_FILE, db=DB_FILE)
+
+    print(getMappingFromDB(DB_FILE))
+
+    # Prepare to receive SIGUSR1
+    signal.signal(signal.SIGUSR1, server.updateMapping)
+
+    # Run!
+    try:
+        server.run()
+    except KeyboardInterrupt:
+        print("[i] Exiting!")
+
+    os.remove(PID_PATH)
