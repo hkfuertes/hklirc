@@ -1,0 +1,10 @@
+[Unit]
+Description=hklirc gunicorn daemon
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/hklirc/server/gunicorn_start.sh
+
+[Install]
+WantedBy=multi-user.target
