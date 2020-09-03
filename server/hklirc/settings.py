@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -129,7 +130,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = str(BASE_DIR) + "/static"
+#STATIC_ROOT = str(BASE_DIR) + "/static"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] # new
 
 # Custom Variables
 LIRCD_PATH = "/etc/lirc/lircd.conf.d/"
