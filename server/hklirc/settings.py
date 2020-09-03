@@ -130,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = str(BASE_DIR) + "/static"
+STATIC_ROOT = str(BASE_DIR) + "/tstatic"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] # new
 
 # Custom Variables
