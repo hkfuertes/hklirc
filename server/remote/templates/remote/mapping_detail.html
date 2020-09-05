@@ -107,9 +107,7 @@
             <li class="list-group-item">{{ key }} <br />
 
                 {% for key_code in value.codes %}
-                    {% if key_code not in mapping_codes %}
                         <span class="badge bg-navy">{{key_code}}</span>
-                    {% endif %}
                 {% endfor %}
             </li>
             {% endfor %}
@@ -138,7 +136,12 @@
             <li class="list-group-item">{{ key }} <br />
 
                 {% for key_code in value.codes %}
-                <a href="#{{key_code}}" class="remote_button"><span class="badge bg-navy">{{key_code}}</span></a>
+                <a 
+                href="#{{key_code}}" class="remote_button button_{{key_code}}"
+                {% if key_code in mapping_codes %}
+                style="display:none;"
+                {% endif %}
+                ><span class="badge bg-navy">{{key_code}}</span></a>
                 {% endfor %}
             </li>
             {% endfor %}
@@ -166,10 +169,14 @@
             if($(this).attr("key") == pressedKey)
                 proceed = false;
         })
-        var template = $('<div>').append($('li#key_map_template').clone().show()).html();
-        template = template.replaceAll("KEY_CODE_TO_REPLACE", $(this).attr('href').replace("#",""))
-        $('ul#key_map_list').append($.parseHTML(template));
 
+        if(proceed){
+            var template = $('<div>').append($('li#key_map_template').clone().show()).html();
+            template = template.replaceAll("KEY_CODE_TO_REPLACE", $(this).attr('href').replace("#",""))
+            $('ul#key_map_list').append($.parseHTML(template));
+            $('a.button_'+pressedKey).hide()
+        }
+        
         $('#mapping-modal').modal('hide');
       })
   </script>
