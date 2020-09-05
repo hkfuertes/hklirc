@@ -1,0 +1,101 @@
+{% extends 'adminltetop/body.html' %}
+
+{% block title %}Mappings{% endblock %}
+{% block page_name %}{{ mapping.name }}{% endblock %}
+{% block page_description %}Edit{% endblock %}
+
+{% block breadcrumb-items %}
+<li class="breadcrumb-item"><a href="{% url 'mapping_index' %}" class="text-navy">Mappings</a></li>
+<li class="breadcrumb-item">{{mapping.name}}</li>
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Name" name="general_name"
+                        value="{{mapping.name}}">
+                        {% if mapping.active %}
+                        <div class="input-group-append">
+                          <span class="input-group-text text-navy">Active</span>
+                        </div>
+                        {% endif %}
+                      </div>
+                    
+
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for key in available_keys %}
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                {{key}}
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-arrow-right align-bottom"></i>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group input-group">
+                                    <select name="mapping_{{key}}" class="form-control custom-select">
+                                        <!-- If it is not yet mapped, we select the empty one -->
+                                        <option {% if key not in mappings_codes %} selected {% endif %}></option>
+                                        {% for key_code in all_keys %}
+                                        {% if mapping_codes|get_item:key == key_code %}
+                                        <option selected value="{{key_code}}">{{key_code}}</option>
+                                        {% else %}
+                                        <option value="{{key_code}}">{{key_code}}</option>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                    <!--
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-navy btn-flat"><i
+                                            class="fas fa-plus"></i></button>
+                                </span>
+                            -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+</form>
+</div>
+<div class="col-xs-12 col-md-4">
+    <input type="submit" class="btn btn-block bg-navy" name="submitted" value="Save" /><br/>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title"><span class="text-muted">Remotes & Keys</span></span>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for key, value in remotes.items %}
+            <li class="list-group-item">{{ key }} <br />
+
+                {% for key_code in value.codes %}
+                <span class="badge bg-navy">{{key_code}}</span>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a class="btn btn-block btn-danger" href="{% url 'mapping_delete' mapping.id %}">Delete</a>
+</div>
+{% comment %}
+<div class="col-xs-12 col-md-8">
+    <textarea name="remote_config" class="form-control" id="remote_config" cols="255"
+        rows="10">{{mapping.config}}</textarea>
+</div>
+{% endcomment %}
+</div>
+</form>
+<script>
+    $('option:selected').each(function () { $(this).prop('selected', true); });
+</script>
+
+{% endblock %}

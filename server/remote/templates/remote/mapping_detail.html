@@ -28,11 +28,34 @@
                     
 
                 </div>
-                <ul class="list-group list-group-flush">
-                    {% for key in available_keys %}
-                    <li class="list-group-item">
+                <ul class="list-group list-group-flush" id="key_map_list">
+                    <li class="list-group-item key" style="display: none" id="key_map_template" key="KEY_CODE_TO_REPLACE">
                         <div class="row">
+                            <div class="col-sm-4">
+                                KEY_CODE_TO_REPLACE
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-arrow-right align-bottom"></i>
+                            </div>
                             <div class="col-sm-5">
+                                <div class="form-group input-group">
+                                    <select name="mapping_KEY_CODE_TO_REPLACE" class="form-control custom-select">
+                                        <option {% if key not in mappings_codes %} selected {% endif %}></option>
+                                        {% for key_code in all_keys %}
+                                        <option value="{{key_code}}">{{key_code}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 text-right">
+                                <a href="#" class="btn text-danger"><i class="fas fa-times"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    {% for key in mapping_codes %}
+                    <li class="list-group-item key" key="{{key_code}}">
+                        <div class="row">
+                            <div class="col-sm-4">
                                 {{key}}
                             </div>
                             <div class="col-sm-2 text-center">
@@ -59,10 +82,16 @@
                             -->
                                 </div>
                             </div>
+                            <div class="col-sm-1 text-right">
+                                <a href="#" class="btn text-danger"><i class="fas fa-times"></i></a>
+                            </div>
                         </div>
                     </li>
                     {% endfor %}
                 </ul>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn text-navy" id="addMapping"><i class="fas fa-plus"></i> Map a new Key</a>
+                  </div>
             </div>
 </form>
 </div>
@@ -78,7 +107,9 @@
             <li class="list-group-item">{{ key }} <br />
 
                 {% for key_code in value.codes %}
-                <span class="badge bg-navy">{{key_code}}</span>
+                    {% if key_code not in mapping_codes %}
+                        <span class="badge bg-navy">{{key_code}}</span>
+                    {% endif %}
                 {% endfor %}
             </li>
             {% endfor %}
@@ -86,16 +117,61 @@
     </div>
     <a class="btn btn-block btn-danger" href="{% url 'mapping_delete' mapping.id %}">Delete</a>
 </div>
-{% comment %}
-<div class="col-xs-12 col-md-8">
-    <textarea name="remote_config" class="form-control" id="remote_config" cols="255"
-        rows="10">{{mapping.config}}</textarea>
-</div>
-{% endcomment %}
+
 </div>
 </form>
 <script>
     $('option:selected').each(function () { $(this).prop('selected', true); });
 </script>
+
+<div class="modal fade" id="mapping-modal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Which button do you want to map?</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for key, value in remotes.items %}
+            <li class="list-group-item">{{ key }} <br />
+
+                {% for key_code in value.codes %}
+                <a href="#{{key_code}}" class="remote_button"><span class="badge bg-navy">{{key_code}}</span></a>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="modal-footer text-center text-muted">
+          <small>Click on a button to continue.</small>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <script>
+      $('a#addMapping').click(function(e){
+        e.preventDefault();
+        $('#mapping-modal').modal('show');
+      })
+      $('a.remote_button').click(function(e){
+        e.preventDefault();
+        var pressedKey = $(this).attr('href').replace("#","");
+
+        var proceed = true;
+        $("li.key").each(function(e){
+            if($(this).attr("key") == pressedKey)
+                proceed = false;
+        })
+        var template = $('<div>').append($('li#key_map_template').clone().show()).html();
+        template = template.replaceAll("KEY_CODE_TO_REPLACE", $(this).attr('href').replace("#",""))
+        $('ul#key_map_list').append($.parseHTML(template));
+
+        $('#mapping-modal').modal('hide');
+      })
+  </script>
 
 {% endblock %}

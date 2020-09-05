@@ -88,6 +88,7 @@ def update_map(request):
 
 
 def signal_daemon(pid_file):
-    with open(pid_file,'r') as f:
-        pid = int(f.read())
-        kill(pid, signal.SIGUSR1)
+    if exists(pid_file):
+        with open(pid_file,'r') as f:
+            pid = int(f.read())
+            kill(pid, signal.SIGUSR1)
