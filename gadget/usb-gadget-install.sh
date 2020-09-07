@@ -11,8 +11,10 @@ echo "libcomposite" | sudo tee -a /etc/modules
 # We need to copy the usb-gadget.sh first to the right location.
 sudo cp ./usb-gadget.sh /usr/bin/usb-gadget.sh
 sudo chmod +x /usr/bin/usb-gadget.sh
-sudo sed -i -e '$i \/usr/bin/usb-gadget.sh\n' /etc/rc.local
+#sudo sed -i -e '$i \/usr/bin/usb-gadget.sh\n' /etc/rc.local
 #sudo echo "/usr/bin/usb-gadget.sh" >> /etc/rc.local
+sudo cp usb-gadget.service /etc/systemd/system/
+sudo systemctl enable usb-gadget.service
 
 #Check internet
 wget -q --tries=10 --timeout=20 --spider http://google.com
