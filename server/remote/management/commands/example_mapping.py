@@ -10,9 +10,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         new_mapping={
-            'circle':'KEY_VOLUMEUP',
-            'cross':'KEY_VOLUMEDOWN',
-            'r3':'KEY_MUTE'
+            'CIRCLE':'KEY_VOLUMEUP',
+            'CROSS':'KEY_VOLUMEDOWN',
+            'R3':'KEY_MUTE'
         }
         mapping = Mapping(config=json.dumps(new_mapping), name="Music", active=True, id=1)
         mapping.save()
