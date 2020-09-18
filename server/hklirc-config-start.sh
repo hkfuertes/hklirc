@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="hklirc"                              #Name of the application (*)
-DJANGODIR=/home/pi/hklirc/server             # Django project directory (*)
+DJANGODIR=/home/pi/hklirc/server
 #SOCKFILE=/home/pi/hklirc/gunicorn.sock        # we will communicate using this unix socket (*)
 USER=pi                                        # the user to run as (*)
 GROUP=pi                                     # the group to run as (*)

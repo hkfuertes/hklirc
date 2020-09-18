@@ -4,7 +4,7 @@ Description=hklirc gunicorn daemon
 [Service]
 Type=simple
 User=pi
-ExecStart=/home/pi/hklirc/server/gunicorn_start.sh
+ExecStart=/home/pi/hklirc/server/hklirc-config-start.sh
 
 [Install]
 WantedBy=multi-user.target
