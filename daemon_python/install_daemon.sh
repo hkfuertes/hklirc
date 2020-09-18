@@ -11,6 +11,7 @@ DRIVER="default"
 DEVICE="/dev/lirc0"
 DEFAULT_REMOTE="https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/sony/SCPH-10150.lircd.conf?format=raw"
 DEFAULT_REMOTE_NAME="SCPH-10150.lircd.conf"
+DEFAULT_PATH="/home/pi/hklirc/daemon_python"
 
 # Changing lirc_options.conf
 tput setaf 2; echo "[+] Changing lirc_options.conf"
@@ -31,6 +32,7 @@ wget $DEFAULT_REMOTE -O "/etc/lirc/lircd.conf.d/$DEFAULT_REMOTE_NAME"
 
 # Installing service
 tput setaf 2; echo "[+] Installing and enabling service"
+sed -i "s|$DEFAULT_PATH|$(pwd)|g" hklircd.service
 cp hklircd.service /etc/systemd/system/
 systemctl enable hklircd.service
 
