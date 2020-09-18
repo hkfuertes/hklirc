@@ -1,4 +1,9 @@
-## Install Steps
+## Instalation
+`# ./install_daemon.sh`
+
+This script will execute the steps bellow automatically. **It has to be run by root.**
+
+## Manual Steps
 - `sudo apt update && sudo apt install -y lirc`
 - Change `driver=default` and `device=/dev/lirc0` in `/etc/lirc/lirc_options.conf` 
   > _Need to come up with a `sed` command to do this!_
@@ -7,3 +12,7 @@
 - Add any remote to `/etc/lirc/lircd.conf.d/` and reboot to make lircd pick them.
 - `$ python3 hklirc.py`
 - **Don't** run python script as root!
+
+## Defaults
+- Remote: https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/sony/SCPH-10150.lircd.conf
+- GPIO PIN: **14**
