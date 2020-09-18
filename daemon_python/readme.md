@@ -1,4 +1,4 @@
-## Instalation
+## Installation
 `# ./install_daemon.sh`
 
 This script will execute the steps bellow automatically. **It has to be run by root.**
