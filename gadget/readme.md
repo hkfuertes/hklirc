@@ -13,7 +13,7 @@ The HID device will send the following descriptor with a keyboard device and a c
   echo "010000${KEY_CODE}00000000" | xxd -r -ps > /dev/hidg0;
   echo "0100000000000000" | xxd -r -ps > /dev/hidg0;
   ```
-- The **device_id** for the consumer device is__*0x02*__ and the leng of the message is _**3 Bytes**_.
+- The **device_id** for the consumer device is __*0x02*__ and the leng of the message is _**3 Bytes**_.
   ```sh
   echo "02${KEY_CODE}00" | xxd -r -ps > /dev/hidg0;
   echo "020000" | xxd -r -ps > /dev/hidg0;
