@@ -1,5 +1,5 @@
 #!/bin/bash
-gadget=/sys/kernel/config/usb_gadget/pi3aplus
+gadget=/sys/kernel/config/usb_gadget/raspberrypi
 
 usb_version="0x0200" # USB 2.0
 device_class="0xEF"
