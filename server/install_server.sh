@@ -15,7 +15,7 @@ virtualenv -p python3 venv
 source venv/bin/activate
 
 # Configuring django project
-tput setaf 2; echo "[+] Creating and activating virtualenv";tput setaf 7;
+tput setaf 2; echo "[+] Configuring django project";tput setaf 7;
 pip install -r requirements.txt
 python manage.py collectstatic --noinput
 python manage.py makemigrations remote

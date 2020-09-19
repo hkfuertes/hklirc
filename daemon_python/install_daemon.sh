@@ -4,7 +4,7 @@
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
 # Installing Lirc
-tput setaf 2; echo "[+] Installing Lirc"
+tput setaf 2; echo "[+] Installing Lirc";tput setaf 7;
 apt install -y lirc
 
 DRIVER="default"
