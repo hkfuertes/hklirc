@@ -37,7 +37,7 @@ cd ..
 
 # Changing permission for the folder
 tput setaf 2; echo "[+] Changing permission for the folder...";tput setaf 7;
-chmod 777 -R hklirc
+chmod 777 -R .
 
 # Installed, rebooting
 tput setaf 2; echo "[+] Installed, rebooting...";tput setaf 7;
