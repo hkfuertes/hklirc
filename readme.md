@@ -3,6 +3,10 @@ This is a simple project for a Raspberry Pi that aims to bridge the **gpio-ir** 
 
 There are 3 parts to the project, the [gadget](gadget) configuration part, the [server](server) to manage the mappings and the actual python [daemon](daemon_python) that will trigger the actual keystrokes in the connected PC.
 
+## Requirements
+To install the project a blank RaspberryPiOS image is required. _Unfortunatelly the usb-ethernet (RNDIS) driver is not working for the 64bit OS._
+  > You can find it here: https://www.raspberrypi.org/downloads/raspberry-pi-os/
+
 ## Installation
 `wget -O - https://raw.githubusercontent.com/hkfuertes/hklirc/master/hklirc-installer.sh | sudo bash`
 
