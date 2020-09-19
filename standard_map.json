@@ -1,892 +1,667 @@
 {
-    "KEY_MOD_LCTRL": {
-        "key": "KEY_MOD_LCTRL",
-        "value": "0x01",
-        "keyboard": true
-    },
-    "KEY_MOD_LSHIFT": {
-        "key": "KEY_MOD_LSHIFT",
-        "value": "0x02",
-        "keyboard": true
-    },
-    "KEY_MOD_LALT": {
-        "key": "KEY_MOD_LALT",
-        "value": "0x04",
-        "keyboard": true
-    },
-    "KEY_MOD_LMETA": {
-        "key": "KEY_MOD_LMETA",
-        "value": "0x08",
-        "keyboard": true
-    },
-    "KEY_MOD_RCTRL": {
-        "key": "KEY_MOD_RCTRL",
-        "value": "0x10",
-        "keyboard": true
-    },
-    "KEY_MOD_RSHIFT": {
-        "key": "KEY_MOD_RSHIFT",
-        "value": "0x20",
-        "keyboard": true
-    },
-    "KEY_MOD_RALT": {
-        "key": "KEY_MOD_RALT",
-        "value": "0x40",
-        "keyboard": true
-    },
-    "KEY_MOD_RMETA": {
-        "key": "KEY_MOD_RMETA",
-        "value": "0x80",
-        "keyboard": true
-    },
-    "KEY_NONE": {
-        "key": "KEY_NONE",
-        "value": "0x00",
-        "keyboard": true
-    },
-    "KEY_ERR_OVF": {
-        "key": "KEY_ERR_OVF",
-        "value": "0x01",
-        "keyboard": true
-    },
-    "KEY_A": {
-        "key": "KEY_A",
-        "value": "0x04",
-        "keyboard": true
-    },
-    "KEY_B": {
-        "key": "KEY_B",
-        "value": "0x05",
-        "keyboard": true
-    },
-    "KEY_C": {
-        "key": "KEY_C",
-        "value": "0x06",
-        "keyboard": true
-    },
-    "KEY_D": {
-        "key": "KEY_D",
-        "value": "0x07",
-        "keyboard": true
-    },
-    "KEY_E": {
-        "key": "KEY_E",
-        "value": "0x08",
-        "keyboard": true
-    },
-    "KEY_F": {
-        "key": "KEY_F",
-        "value": "0x09",
-        "keyboard": true
-    },
-    "KEY_G": {
-        "key": "KEY_G",
-        "value": "0x0a",
-        "keyboard": true
-    },
-    "KEY_H": {
-        "key": "KEY_H",
-        "value": "0x0b",
-        "keyboard": true
-    },
-    "KEY_I": {
-        "key": "KEY_I",
-        "value": "0x0c",
-        "keyboard": true
-    },
-    "KEY_J": {
-        "key": "KEY_J",
-        "value": "0x0d",
-        "keyboard": true
-    },
-    "KEY_K": {
-        "key": "KEY_K",
-        "value": "0x0e",
-        "keyboard": true
-    },
-    "KEY_L": {
-        "key": "KEY_L",
-        "value": "0x0f",
-        "keyboard": true
-    },
-    "KEY_M": {
-        "key": "KEY_M",
-        "value": "0x10",
-        "keyboard": true
-    },
-    "KEY_N": {
-        "key": "KEY_N",
-        "value": "0x11",
-        "keyboard": true
-    },
-    "KEY_O": {
-        "key": "KEY_O",
-        "value": "0x12",
-        "keyboard": true
-    },
-    "KEY_P": {
-        "key": "KEY_P",
-        "value": "0x13",
-        "keyboard": true
-    },
-    "KEY_Q": {
-        "key": "KEY_Q",
-        "value": "0x14",
-        "keyboard": true
-    },
-    "KEY_R": {
-        "key": "KEY_R",
-        "value": "0x15",
-        "keyboard": true
-    },
-    "KEY_S": {
-        "key": "KEY_S",
-        "value": "0x16",
-        "keyboard": true
-    },
-    "KEY_T": {
-        "key": "KEY_T",
-        "value": "0x17",
-        "keyboard": true
-    },
-    "KEY_U": {
-        "key": "KEY_U",
-        "value": "0x18",
-        "keyboard": true
-    },
-    "KEY_V": {
-        "key": "KEY_V",
-        "value": "0x19",
-        "keyboard": true
-    },
-    "KEY_W": {
-        "key": "KEY_W",
-        "value": "0x1a",
-        "keyboard": true
-    },
-    "KEY_X": {
-        "key": "KEY_X",
-        "value": "0x1b",
-        "keyboard": true
-    },
-    "KEY_Y": {
-        "key": "KEY_Y",
-        "value": "0x1c",
-        "keyboard": true
-    },
-    "KEY_Z": {
-        "key": "KEY_Z",
-        "value": "0x1d",
-        "keyboard": true
-    },
-    "KEY_1": {
-        "key": "KEY_1",
-        "value": "0x1e",
-        "keyboard": true
-    },
-    "KEY_2": {
-        "key": "KEY_2",
-        "value": "0x1f",
-        "keyboard": true
-    },
-    "KEY_3": {
-        "key": "KEY_3",
-        "value": "0x20",
-        "keyboard": true
-    },
-    "KEY_4": {
-        "key": "KEY_4",
-        "value": "0x21",
-        "keyboard": true
-    },
-    "KEY_5": {
-        "key": "KEY_5",
-        "value": "0x22",
-        "keyboard": true
-    },
-    "KEY_6": {
-        "key": "KEY_6",
-        "value": "0x23",
-        "keyboard": true
-    },
-    "KEY_7": {
-        "key": "KEY_7",
-        "value": "0x24",
-        "keyboard": true
-    },
-    "KEY_8": {
-        "key": "KEY_8",
-        "value": "0x25",
-        "keyboard": true
-    },
-    "KEY_9": {
-        "key": "KEY_9",
-        "value": "0x26",
-        "keyboard": true
-    },
-    "KEY_0": {
-        "key": "KEY_0",
-        "value": "0x27",
-        "keyboard": true
-    },
-    "KEY_ENTER": {
-        "key": "KEY_ENTER",
-        "value": "0x28",
-        "keyboard": true
-    },
-    "KEY_ESC": {
-        "key": "KEY_ESC",
-        "value": "0x29",
-        "keyboard": true
-    },
-    "KEY_BACKSPACE": {
-        "key": "KEY_BACKSPACE",
-        "value": "0x2a",
-        "keyboard": true
-    },
-    "KEY_TAB": {
-        "key": "KEY_TAB",
-        "value": "0x2b",
-        "keyboard": true
-    },
-    "KEY_SPACE": {
-        "key": "KEY_SPACE",
-        "value": "0x2c",
-        "keyboard": true
-    },
-    "KEY_MINUS": {
-        "key": "KEY_MINUS",
-        "value": "0x2d",
-        "keyboard": true
-    },
-    "KEY_EQUAL": {
-        "key": "KEY_EQUAL",
-        "value": "0x2e",
-        "keyboard": true
-    },
-    "KEY_LEFTBRACE": {
-        "key": "KEY_LEFTBRACE",
-        "value": "0x2f",
-        "keyboard": true
-    },
-    "KEY_RIGHTBRACE": {
-        "key": "KEY_RIGHTBRACE",
-        "value": "0x30",
-        "keyboard": true
-    },
-    "KEY_BACKSLASH": {
-        "key": "KEY_BACKSLASH",
-        "value": "0x31",
-        "keyboard": true
-    },
-    "KEY_HASHTILDE": {
-        "key": "KEY_HASHTILDE",
-        "value": "0x32",
-        "keyboard": true
-    },
-    "KEY_SEMICOLON": {
-        "key": "KEY_SEMICOLON",
-        "value": "0x33",
-        "keyboard": true
-    },
-    "KEY_APOSTROPHE": {
-        "key": "KEY_APOSTROPHE",
-        "value": "0x34",
-        "keyboard": true
-    },
-    "KEY_GRAVE": {
-        "key": "KEY_GRAVE",
-        "value": "0x35",
-        "keyboard": true
-    },
-    "KEY_COMMA": {
-        "key": "KEY_COMMA",
-        "value": "0x36",
-        "keyboard": true
-    },
-    "KEY_DOT": {
-        "key": "KEY_DOT",
-        "value": "0x37",
-        "keyboard": true
-    },
-    "KEY_SLASH": {
-        "key": "KEY_SLASH",
-        "value": "0x38",
-        "keyboard": true
-    },
-    "KEY_CAPSLOCK": {
-        "key": "KEY_CAPSLOCK",
-        "value": "0x39",
-        "keyboard": true
-    },
-    "KEY_F1": {
-        "key": "KEY_F1",
-        "value": "0x3a",
-        "keyboard": true
-    },
-    "KEY_F2": {
-        "key": "KEY_F2",
-        "value": "0x3b",
-        "keyboard": true
-    },
-    "KEY_F3": {
-        "key": "KEY_F3",
-        "value": "0x3c",
-        "keyboard": true
-    },
-    "KEY_F4": {
-        "key": "KEY_F4",
-        "value": "0x3d",
-        "keyboard": true
-    },
-    "KEY_F5": {
-        "key": "KEY_F5",
-        "value": "0x3e",
-        "keyboard": true
-    },
-    "KEY_F6": {
-        "key": "KEY_F6",
-        "value": "0x3f",
-        "keyboard": true
-    },
-    "KEY_F7": {
-        "key": "KEY_F7",
-        "value": "0x40",
-        "keyboard": true
-    },
-    "KEY_F8": {
-        "key": "KEY_F8",
-        "value": "0x41",
-        "keyboard": true
-    },
-    "KEY_F9": {
-        "key": "KEY_F9",
-        "value": "0x42",
-        "keyboard": true
-    },
-    "KEY_F10": {
-        "key": "KEY_F10",
-        "value": "0x43",
-        "keyboard": true
-    },
-    "KEY_F11": {
-        "key": "KEY_F11",
-        "value": "0x44",
-        "keyboard": true
-    },
-    "KEY_F12": {
-        "key": "KEY_F12",
-        "value": "0x45",
-        "keyboard": true
-    },
-    "KEY_SYSRQ": {
-        "key": "KEY_SYSRQ",
-        "value": "0x46",
-        "keyboard": true
-    },
-    "KEY_SCROLLLOCK": {
-        "key": "KEY_SCROLLLOCK",
-        "value": "0x47",
-        "keyboard": true
-    },
-    "KEY_PAUSE": {
-        "key": "KEY_PAUSE",
-        "value": "0x48",
-        "keyboard": true
-    },
-    "KEY_INSERT": {
-        "key": "KEY_INSERT",
-        "value": "0x49",
-        "keyboard": true
-    },
-    "KEY_HOME": {
-        "key": "KEY_HOME",
-        "value": "0x4a",
-        "keyboard": true
-    },
-    "KEY_PAGEUP": {
-        "key": "KEY_PAGEUP",
-        "value": "0x4b",
-        "keyboard": true
-    },
-    "KEY_DELETE": {
-        "key": "KEY_DELETE",
-        "value": "0x4c",
-        "keyboard": true
-    },
-    "KEY_END": {
-        "key": "KEY_END",
-        "value": "0x4d",
-        "keyboard": true
-    },
-    "KEY_PAGEDOWN": {
-        "key": "KEY_PAGEDOWN",
-        "value": "0x4e",
-        "keyboard": true
-    },
-    "KEY_RIGHT": {
-        "key": "KEY_RIGHT",
-        "value": "0x4f",
-        "keyboard": true
-    },
-    "KEY_LEFT": {
-        "key": "KEY_LEFT",
-        "value": "0x50",
-        "keyboard": true
-    },
-    "KEY_DOWN": {
-        "key": "KEY_DOWN",
-        "value": "0x51",
-        "keyboard": true
-    },
-    "KEY_UP": {
-        "key": "KEY_UP",
-        "value": "0x52",
-        "keyboard": true
-    },
-    "KEY_NUMLOCK": {
-        "key": "KEY_NUMLOCK",
-        "value": "0x53",
-        "keyboard": true
-    },
-    "KEY_KPSLASH": {
-        "key": "KEY_KPSLASH",
-        "value": "0x54",
-        "keyboard": true
-    },
-    "KEY_KPASTERISK": {
-        "key": "KEY_KPASTERISK",
-        "value": "0x55",
-        "keyboard": true
-    },
-    "KEY_KPMINUS": {
-        "key": "KEY_KPMINUS",
-        "value": "0x56",
-        "keyboard": true
-    },
-    "KEY_KPPLUS": {
-        "key": "KEY_KPPLUS",
-        "value": "0x57",
-        "keyboard": true
-    },
-    "KEY_KPENTER": {
-        "key": "KEY_KPENTER",
-        "value": "0x58",
-        "keyboard": true
-    },
-    "KEY_KP1": {
-        "key": "KEY_KP1",
-        "value": "0x59",
-        "keyboard": true
-    },
-    "KEY_KP2": {
-        "key": "KEY_KP2",
-        "value": "0x5a",
-        "keyboard": true
-    },
-    "KEY_KP3": {
-        "key": "KEY_KP3",
-        "value": "0x5b",
-        "keyboard": true
-    },
-    "KEY_KP4": {
-        "key": "KEY_KP4",
-        "value": "0x5c",
-        "keyboard": true
-    },
-    "KEY_KP5": {
-        "key": "KEY_KP5",
-        "value": "0x5d",
-        "keyboard": true
-    },
-    "KEY_KP6": {
-        "key": "KEY_KP6",
-        "value": "0x5e",
-        "keyboard": true
-    },
-    "KEY_KP7": {
-        "key": "KEY_KP7",
-        "value": "0x5f",
-        "keyboard": true
-    },
-    "KEY_KP8": {
-        "key": "KEY_KP8",
-        "value": "0x60",
-        "keyboard": true
-    },
-    "KEY_KP9": {
-        "key": "KEY_KP9",
-        "value": "0x61",
-        "keyboard": true
-    },
-    "KEY_KP0": {
-        "key": "KEY_KP0",
-        "value": "0x62",
-        "keyboard": true
-    },
-    "KEY_KPDOT": {
-        "key": "KEY_KPDOT",
-        "value": "0x63",
-        "keyboard": true
-    },
-    "KEY_102ND": {
-        "key": "KEY_102ND",
-        "value": "0x64",
-        "keyboard": true
-    },
-    "KEY_COMPOSE": {
-        "key": "KEY_COMPOSE",
-        "value": "0x65",
-        "keyboard": true
-    },
-    "KEY_POWER": {
-        "key": "KEY_POWER",
-        "value": "0x66",
-        "keyboard": true
-    },
-    "KEY_KPEQUAL": {
-        "key": "KEY_KPEQUAL",
-        "value": "0x67",
-        "keyboard": true
-    },
-    "KEY_F13": {
-        "key": "KEY_F13",
-        "value": "0x68",
-        "keyboard": true
-    },
-    "KEY_F14": {
-        "key": "KEY_F14",
-        "value": "0x69",
-        "keyboard": true
-    },
-    "KEY_F15": {
-        "key": "KEY_F15",
-        "value": "0x6a",
-        "keyboard": true
-    },
-    "KEY_F16": {
-        "key": "KEY_F16",
-        "value": "0x6b",
-        "keyboard": true
-    },
-    "KEY_F17": {
-        "key": "KEY_F17",
-        "value": "0x6c",
-        "keyboard": true
-    },
-    "KEY_F18": {
-        "key": "KEY_F18",
-        "value": "0x6d",
-        "keyboard": true
-    },
-    "KEY_F19": {
-        "key": "KEY_F19",
-        "value": "0x6e",
-        "keyboard": true
-    },
-    "KEY_F20": {
-        "key": "KEY_F20",
-        "value": "0x6f",
-        "keyboard": true
-    },
-    "KEY_F21": {
-        "key": "KEY_F21",
-        "value": "0x70",
-        "keyboard": true
-    },
-    "KEY_F22": {
-        "key": "KEY_F22",
-        "value": "0x71",
-        "keyboard": true
-    },
-    "KEY_F23": {
-        "key": "KEY_F23",
-        "value": "0x72",
-        "keyboard": true
-    },
-    "KEY_F24": {
-        "key": "KEY_F24",
-        "value": "0x73",
-        "keyboard": true
-    },
-    "KEY_OPEN": {
-        "key": "KEY_OPEN",
-        "value": "0x74",
-        "keyboard": true
-    },
-    "KEY_HELP": {
-        "key": "KEY_HELP",
-        "value": "0x75",
-        "keyboard": true
-    },
-    "KEY_PROPS": {
-        "key": "KEY_PROPS",
-        "value": "0x76",
-        "keyboard": true
-    },
-    "KEY_FRONT": {
-        "key": "KEY_FRONT",
-        "value": "0x77",
-        "keyboard": true
-    },
-    "KEY_STOP": {
-        "key": "KEY_STOP",
-        "value": "0x04",
-        "keyboard": false
-    },
-    "KEY_AGAIN": {
-        "key": "KEY_AGAIN",
-        "value": "0x79",
-        "keyboard": true
-    },
-    "KEY_UNDO": {
-        "key": "KEY_UNDO",
-        "value": "0x7a",
-        "keyboard": true
-    },
-    "KEY_CUT": {
-        "key": "KEY_CUT",
-        "value": "0x7b",
-        "keyboard": true
-    },
-    "KEY_COPY": {
-        "key": "KEY_COPY",
-        "value": "0x7c",
-        "keyboard": true
-    },
-    "KEY_PASTE": {
-        "key": "KEY_PASTE",
-        "value": "0x7d",
-        "keyboard": true
-    },
-    "KEY_FIND": {
-        "key": "KEY_FIND",
-        "value": "0x7e",
-        "keyboard": true
-    },
-    "KEY_MUTE": {
-        "key": "KEY_MUTE",
-        "value": "0x10",
-        "keyboard": false
-    },
-    "KEY_VOLUMEUP": {
-        "key": "KEY_VOLUMEUP",
-        "value": "0x20",
-        "keyboard": false
-    },
-    "KEY_VOLUMEDOWN": {
-        "key": "KEY_VOLUMEDOWN",
-        "value": "0x40",
-        "keyboard": false
-    },
-    "KEY_KPCOMMA": {
-        "key": "KEY_KPCOMMA",
-        "value": "0x85",
-        "keyboard": true
-    },
-    "KEY_RO": {
-        "key": "KEY_RO",
-        "value": "0x87",
-        "keyboard": true
-    },
-    "KEY_KATAKANAHIRAGANA": {
-        "key": "KEY_KATAKANAHIRAGANA",
-        "value": "0x88",
-        "keyboard": true
-    },
-    "KEY_YEN": {
-        "key": "KEY_YEN",
-        "value": "0x89",
-        "keyboard": true
-    },
-    "KEY_HENKAN": {
-        "key": "KEY_HENKAN",
-        "value": "0x8a",
-        "keyboard": true
-    },
-    "KEY_MUHENKAN": {
-        "key": "KEY_MUHENKAN",
-        "value": "0x8b",
-        "keyboard": true
-    },
-    "KEY_KPJPCOMMA": {
-        "key": "KEY_KPJPCOMMA",
-        "value": "0x8c",
-        "keyboard": true
-    },
-    "KEY_HANGEUL": {
-        "key": "KEY_HANGEUL",
-        "value": "0x90",
-        "keyboard": true
-    },
-    "KEY_HANJA": {
-        "key": "KEY_HANJA",
-        "value": "0x91",
-        "keyboard": true
-    },
-    "KEY_KATAKANA": {
-        "key": "KEY_KATAKANA",
-        "value": "0x92",
-        "keyboard": true
-    },
-    "KEY_HIRAGANA": {
-        "key": "KEY_HIRAGANA",
-        "value": "0x93",
-        "keyboard": true
-    },
-    "KEY_ZENKAKUHANKAKU": {
-        "key": "KEY_ZENKAKUHANKAKU",
-        "value": "0x94",
-        "keyboard": true
-    },
-    "KEY_KPLEFTPAREN": {
-        "key": "KEY_KPLEFTPAREN",
-        "value": "0xb6",
-        "keyboard": true
-    },
-    "KEY_KPRIGHTPAREN": {
-        "key": "KEY_KPRIGHTPAREN",
-        "value": "0xb7",
-        "keyboard": true
-    },
-    "KEY_LEFTCTRL": {
-        "key": "KEY_LEFTCTRL",
-        "value": "0xe0",
-        "keyboard": true
-    },
-    "KEY_LEFTSHIFT": {
-        "key": "KEY_LEFTSHIFT",
-        "value": "0xe1",
-        "keyboard": true
-    },
-    "KEY_LEFTALT": {
-        "key": "KEY_LEFTALT",
-        "value": "0xe2",
-        "keyboard": true
-    },
-    "KEY_LEFTMETA": {
-        "key": "KEY_LEFTMETA",
-        "value": "0xe3",
-        "keyboard": true
-    },
-    "KEY_RIGHTCTRL": {
-        "key": "KEY_RIGHTCTRL",
-        "value": "0xe4",
-        "keyboard": true
-    },
-    "KEY_RIGHTSHIFT": {
-        "key": "KEY_RIGHTSHIFT",
-        "value": "0xe5",
-        "keyboard": true
-    },
-    "KEY_RIGHTALT": {
-        "key": "KEY_RIGHTALT",
-        "value": "0xe6",
-        "keyboard": true
-    },
-    "KEY_RIGHTMETA": {
-        "key": "KEY_RIGHTMETA",
-        "value": "0xe7",
-        "keyboard": true
-    },
-    "KEY_MEDIA_PLAYPAUSE": {
-        "key": "KEY_MEDIA_PLAYPAUSE",
-        "value": "0x08",
-        "keyboard": false
-    },
-    "KEY_MEDIA_STOPCD": {
-        "key": "KEY_MEDIA_STOPCD",
-        "value": "0xe9",
-        "keyboard": true
-    },
-    "KEY_MEDIA_PREVIOUSSONG": {
-        "key": "KEY_MEDIA_PREVIOUSSONG",
-        "value": "0x02",
-        "keyboard": false
-    },
-    "KEY_MEDIA_NEXTSONG": {
-        "key": "KEY_MEDIA_NEXTSONG",
-        "value": "0x01",
-        "keyboard": false
-    },
-    "KEY_MEDIA_EJECTCD": {
-        "key": "KEY_MEDIA_EJECTCD",
-        "value": "0xec",
-        "keyboard": true
-    },
-    "KEY_MEDIA_VOLUMEUP": {
-        "key": "KEY_MEDIA_VOLUMEUP",
-        "value": "0xed",
-        "keyboard": true
-    },
-    "KEY_MEDIA_VOLUMEDOWN": {
-        "key": "KEY_MEDIA_VOLUMEDOWN",
-        "value": "0xee",
-        "keyboard": true
-    },
-    "KEY_MEDIA_MUTE": {
-        "key": "KEY_MEDIA_MUTE",
-        "value": "0xef",
-        "keyboard": true
-    },
-    "KEY_MEDIA_WWW": {
-        "key": "KEY_MEDIA_WWW",
-        "value": "0xf0",
-        "keyboard": true
-    },
-    "KEY_MEDIA_BACK": {
-        "key": "KEY_MEDIA_BACK",
-        "value": "0xf1",
-        "keyboard": true
-    },
-    "KEY_MEDIA_FORWARD": {
-        "key": "KEY_MEDIA_FORWARD",
-        "value": "0xf2",
-        "keyboard": true
-    },
-    "KEY_MEDIA_STOP": {
-        "key": "KEY_MEDIA_STOP",
-        "value": "0xf3",
-        "keyboard": true
-    },
-    "KEY_MEDIA_FIND": {
-        "key": "KEY_MEDIA_FIND",
-        "value": "0xf4",
-        "keyboard": true
-    },
-    "KEY_MEDIA_SCROLLUP": {
-        "key": "KEY_MEDIA_SCROLLUP",
-        "value": "0xf5",
-        "keyboard": true
-    },
-    "KEY_MEDIA_SCROLLDOWN": {
-        "key": "KEY_MEDIA_SCROLLDOWN",
-        "value": "0xf6",
-        "keyboard": true
-    },
-    "KEY_MEDIA_EDIT": {
-        "key": "KEY_MEDIA_EDIT",
-        "value": "0xf7",
-        "keyboard": true
-    },
-    "KEY_MEDIA_SLEEP": {
-        "key": "KEY_MEDIA_SLEEP",
-        "value": "0xf8",
-        "keyboard": true
-    },
-    "KEY_MEDIA_COFFEE": {
-        "key": "KEY_MEDIA_COFFEE",
-        "value": "0xf9",
-        "keyboard": true
-    },
-    "KEY_MEDIA_REFRESH": {
-        "key": "KEY_MEDIA_REFRESH",
-        "value": "0xfa",
-        "keyboard": true
-    },
-    "KEY_MEDIA_CALC": {
-        "key": "KEY_MEDIA_CALC",
-        "value": "0xfb",
-        "keyboard": true
-    }
+  "KEY_ERR_OVF": {
+    "key": "KEY_ERR_OVF",
+    "value": "0x01",
+    "keyboard": true
+  },
+  "KEY_A": {
+    "key": "KEY_A",
+    "value": "0x04",
+    "keyboard": true
+  },
+  "KEY_B": {
+    "key": "KEY_B",
+    "value": "0x05",
+    "keyboard": true
+  },
+  "KEY_C": {
+    "key": "KEY_C",
+    "value": "0x06",
+    "keyboard": true
+  },
+  "KEY_D": {
+    "key": "KEY_D",
+    "value": "0x07",
+    "keyboard": true
+  },
+  "KEY_E": {
+    "key": "KEY_E",
+    "value": "0x08",
+    "keyboard": true
+  },
+  "KEY_F": {
+    "key": "KEY_F",
+    "value": "0x09",
+    "keyboard": true
+  },
+  "KEY_G": {
+    "key": "KEY_G",
+    "value": "0x0a",
+    "keyboard": true
+  },
+  "KEY_H": {
+    "key": "KEY_H",
+    "value": "0x0b",
+    "keyboard": true
+  },
+  "KEY_I": {
+    "key": "KEY_I",
+    "value": "0x0c",
+    "keyboard": true
+  },
+  "KEY_J": {
+    "key": "KEY_J",
+    "value": "0x0d",
+    "keyboard": true
+  },
+  "KEY_K": {
+    "key": "KEY_K",
+    "value": "0x0e",
+    "keyboard": true
+  },
+  "KEY_L": {
+    "key": "KEY_L",
+    "value": "0x0f",
+    "keyboard": true
+  },
+  "KEY_M": {
+    "key": "KEY_M",
+    "value": "0x10",
+    "keyboard": true
+  },
+  "KEY_N": {
+    "key": "KEY_N",
+    "value": "0x11",
+    "keyboard": true
+  },
+  "KEY_O": {
+    "key": "KEY_O",
+    "value": "0x12",
+    "keyboard": true
+  },
+  "KEY_P": {
+    "key": "KEY_P",
+    "value": "0x13",
+    "keyboard": true
+  },
+  "KEY_Q": {
+    "key": "KEY_Q",
+    "value": "0x14",
+    "keyboard": true
+  },
+  "KEY_R": {
+    "key": "KEY_R",
+    "value": "0x15",
+    "keyboard": true
+  },
+  "KEY_S": {
+    "key": "KEY_S",
+    "value": "0x16",
+    "keyboard": true
+  },
+  "KEY_T": {
+    "key": "KEY_T",
+    "value": "0x17",
+    "keyboard": true
+  },
+  "KEY_U": {
+    "key": "KEY_U",
+    "value": "0x18",
+    "keyboard": true
+  },
+  "KEY_V": {
+    "key": "KEY_V",
+    "value": "0x19",
+    "keyboard": true
+  },
+  "KEY_W": {
+    "key": "KEY_W",
+    "value": "0x1a",
+    "keyboard": true
+  },
+  "KEY_X": {
+    "key": "KEY_X",
+    "value": "0x1b",
+    "keyboard": true
+  },
+  "KEY_Y": {
+    "key": "KEY_Y",
+    "value": "0x1c",
+    "keyboard": true
+  },
+  "KEY_Z": {
+    "key": "KEY_Z",
+    "value": "0x1d",
+    "keyboard": true
+  },
+  "KEY_1": {
+    "key": "KEY_1",
+    "value": "0x1e",
+    "keyboard": true
+  },
+  "KEY_2": {
+    "key": "KEY_2",
+    "value": "0x1f",
+    "keyboard": true
+  },
+  "KEY_3": {
+    "key": "KEY_3",
+    "value": "0x20",
+    "keyboard": true
+  },
+  "KEY_4": {
+    "key": "KEY_4",
+    "value": "0x21",
+    "keyboard": true
+  },
+  "KEY_5": {
+    "key": "KEY_5",
+    "value": "0x22",
+    "keyboard": true
+  },
+  "KEY_6": {
+    "key": "KEY_6",
+    "value": "0x23",
+    "keyboard": true
+  },
+  "KEY_7": {
+    "key": "KEY_7",
+    "value": "0x24",
+    "keyboard": true
+  },
+  "KEY_8": {
+    "key": "KEY_8",
+    "value": "0x25",
+    "keyboard": true
+  },
+  "KEY_9": {
+    "key": "KEY_9",
+    "value": "0x26",
+    "keyboard": true
+  },
+  "KEY_0": {
+    "key": "KEY_0",
+    "value": "0x27",
+    "keyboard": true
+  },
+  "KEY_ENTER": {
+    "key": "KEY_ENTER",
+    "value": "0x28",
+    "keyboard": true
+  },
+  "KEY_ESC": {
+    "key": "KEY_ESC",
+    "value": "0x29",
+    "keyboard": true
+  },
+  "KEY_BACKSPACE": {
+    "key": "KEY_BACKSPACE",
+    "value": "0x2a",
+    "keyboard": true
+  },
+  "KEY_TAB": {
+    "key": "KEY_TAB",
+    "value": "0x2b",
+    "keyboard": true
+  },
+  "KEY_SPACE": {
+    "key": "KEY_SPACE",
+    "value": "0x2c",
+    "keyboard": true
+  },
+  "KEY_MINUS": {
+    "key": "KEY_MINUS",
+    "value": "0x2d",
+    "keyboard": true
+  },
+  "KEY_EQUAL": {
+    "key": "KEY_EQUAL",
+    "value": "0x2e",
+    "keyboard": true
+  },
+  "KEY_LEFTBRACE": {
+    "key": "KEY_LEFTBRACE",
+    "value": "0x2f",
+    "keyboard": true
+  },
+  "KEY_RIGHTBRACE": {
+    "key": "KEY_RIGHTBRACE",
+    "value": "0x30",
+    "keyboard": true
+  },
+  "KEY_BACKSLASH": {
+    "key": "KEY_BACKSLASH",
+    "value": "0x31",
+    "keyboard": true
+  },
+  "KEY_HASHTILDE": {
+    "key": "KEY_HASHTILDE",
+    "value": "0x32",
+    "keyboard": true
+  },
+  "KEY_SEMICOLON": {
+    "key": "KEY_SEMICOLON",
+    "value": "0x33",
+    "keyboard": true
+  },
+  "KEY_APOSTROPHE": {
+    "key": "KEY_APOSTROPHE",
+    "value": "0x34",
+    "keyboard": true
+  },
+  "KEY_GRAVE": {
+    "key": "KEY_GRAVE",
+    "value": "0x35",
+    "keyboard": true
+  },
+  "KEY_COMMA": {
+    "key": "KEY_COMMA",
+    "value": "0x36",
+    "keyboard": true
+  },
+  "KEY_DOT": {
+    "key": "KEY_DOT",
+    "value": "0x37",
+    "keyboard": true
+  },
+  "KEY_SLASH": {
+    "key": "KEY_SLASH",
+    "value": "0x38",
+    "keyboard": true
+  },
+  "KEY_CAPSLOCK": {
+    "key": "KEY_CAPSLOCK",
+    "value": "0x39",
+    "keyboard": true
+  },
+  "KEY_F1": {
+    "key": "KEY_F1",
+    "value": "0x3a",
+    "keyboard": true
+  },
+  "KEY_F2": {
+    "key": "KEY_F2",
+    "value": "0x3b",
+    "keyboard": true
+  },
+  "KEY_F3": {
+    "key": "KEY_F3",
+    "value": "0x3c",
+    "keyboard": true
+  },
+  "KEY_F4": {
+    "key": "KEY_F4",
+    "value": "0x3d",
+    "keyboard": true
+  },
+  "KEY_F5": {
+    "key": "KEY_F5",
+    "value": "0x3e",
+    "keyboard": true
+  },
+  "KEY_F6": {
+    "key": "KEY_F6",
+    "value": "0x3f",
+    "keyboard": true
+  },
+  "KEY_F7": {
+    "key": "KEY_F7",
+    "value": "0x40",
+    "keyboard": true
+  },
+  "KEY_F8": {
+    "key": "KEY_F8",
+    "value": "0x41",
+    "keyboard": true
+  },
+  "KEY_F9": {
+    "key": "KEY_F9",
+    "value": "0x42",
+    "keyboard": true
+  },
+  "KEY_F10": {
+    "key": "KEY_F10",
+    "value": "0x43",
+    "keyboard": true
+  },
+  "KEY_F11": {
+    "key": "KEY_F11",
+    "value": "0x44",
+    "keyboard": true
+  },
+  "KEY_F12": {
+    "key": "KEY_F12",
+    "value": "0x45",
+    "keyboard": true
+  },
+  "KEY_SYSRQ": {
+    "key": "KEY_SYSRQ",
+    "value": "0x46",
+    "keyboard": true
+  },
+  "KEY_SCROLLLOCK": {
+    "key": "KEY_SCROLLLOCK",
+    "value": "0x47",
+    "keyboard": true
+  },
+  "KEY_PAUSE": {
+    "key": "KEY_PAUSE",
+    "value": "0x48",
+    "keyboard": true
+  },
+  "KEY_INSERT": {
+    "key": "KEY_INSERT",
+    "value": "0x49",
+    "keyboard": true
+  },
+  "KEY_HOME": {
+    "key": "KEY_HOME",
+    "value": "0x4a",
+    "keyboard": true
+  },
+  "KEY_PAGEUP": {
+    "key": "KEY_PAGEUP",
+    "value": "0x4b",
+    "keyboard": true
+  },
+  "KEY_DELETE": {
+    "key": "KEY_DELETE",
+    "value": "0x4c",
+    "keyboard": true
+  },
+  "KEY_END": {
+    "key": "KEY_END",
+    "value": "0x4d",
+    "keyboard": true
+  },
+  "KEY_PAGEDOWN": {
+    "key": "KEY_PAGEDOWN",
+    "value": "0x4e",
+    "keyboard": true
+  },
+  "KEY_RIGHT": {
+    "key": "KEY_RIGHT",
+    "value": "0x4f",
+    "keyboard": true
+  },
+  "KEY_LEFT": {
+    "key": "KEY_LEFT",
+    "value": "0x50",
+    "keyboard": true
+  },
+  "KEY_DOWN": {
+    "key": "KEY_DOWN",
+    "value": "0x51",
+    "keyboard": true
+  },
+  "KEY_UP": {
+    "key": "KEY_UP",
+    "value": "0x52",
+    "keyboard": true
+  },
+  "KEY_NUMLOCK": {
+    "key": "KEY_NUMLOCK",
+    "value": "0x53",
+    "keyboard": true
+  },
+  "KEY_KPSLASH": {
+    "key": "KEY_KPSLASH",
+    "value": "0x54",
+    "keyboard": true
+  },
+  "KEY_KPASTERISK": {
+    "key": "KEY_KPASTERISK",
+    "value": "0x55",
+    "keyboard": true
+  },
+  "KEY_KPMINUS": {
+    "key": "KEY_KPMINUS",
+    "value": "0x56",
+    "keyboard": true
+  },
+  "KEY_KPPLUS": {
+    "key": "KEY_KPPLUS",
+    "value": "0x57",
+    "keyboard": true
+  },
+  "KEY_KPENTER": {
+    "key": "KEY_KPENTER",
+    "value": "0x58",
+    "keyboard": true
+  },
+  "KEY_KP1": {
+    "key": "KEY_KP1",
+    "value": "0x59",
+    "keyboard": true
+  },
+  "KEY_KP2": {
+    "key": "KEY_KP2",
+    "value": "0x5a",
+    "keyboard": true
+  },
+  "KEY_KP3": {
+    "key": "KEY_KP3",
+    "value": "0x5b",
+    "keyboard": true
+  },
+  "KEY_KP4": {
+    "key": "KEY_KP4",
+    "value": "0x5c",
+    "keyboard": true
+  },
+  "KEY_KP5": {
+    "key": "KEY_KP5",
+    "value": "0x5d",
+    "keyboard": true
+  },
+  "KEY_KP6": {
+    "key": "KEY_KP6",
+    "value": "0x5e",
+    "keyboard": true
+  },
+  "KEY_KP7": {
+    "key": "KEY_KP7",
+    "value": "0x5f",
+    "keyboard": true
+  },
+  "KEY_KP8": {
+    "key": "KEY_KP8",
+    "value": "0x60",
+    "keyboard": true
+  },
+  "KEY_KP9": {
+    "key": "KEY_KP9",
+    "value": "0x61",
+    "keyboard": true
+  },
+  "KEY_KP0": {
+    "key": "KEY_KP0",
+    "value": "0x62",
+    "keyboard": true
+  },
+  "KEY_KPDOT": {
+    "key": "KEY_KPDOT",
+    "value": "0x63",
+    "keyboard": true
+  },
+  "KEY_102ND": {
+    "key": "KEY_102ND",
+    "value": "0x64",
+    "keyboard": true
+  },
+  "KEY_COMPOSE": {
+    "key": "KEY_COMPOSE",
+    "value": "0x65",
+    "keyboard": true
+  },
+  "KEY_POWER": {
+    "key": "KEY_POWER",
+    "value": "0x66",
+    "keyboard": true
+  },
+  "KEY_KPEQUAL": {
+    "key": "KEY_KPEQUAL",
+    "value": "0x67",
+    "keyboard": true
+  },
+  "KEY_F13": {
+    "key": "KEY_F13",
+    "value": "0x68",
+    "keyboard": true
+  },
+  "KEY_F14": {
+    "key": "KEY_F14",
+    "value": "0x69",
+    "keyboard": true
+  },
+  "KEY_F15": {
+    "key": "KEY_F15",
+    "value": "0x6a",
+    "keyboard": true
+  },
+  "KEY_F16": {
+    "key": "KEY_F16",
+    "value": "0x6b",
+    "keyboard": true
+  },
+  "KEY_F17": {
+    "key": "KEY_F17",
+    "value": "0x6c",
+    "keyboard": true
+  },
+  "KEY_F18": {
+    "key": "KEY_F18",
+    "value": "0x6d",
+    "keyboard": true
+  },
+  "KEY_F19": {
+    "key": "KEY_F19",
+    "value": "0x6e",
+    "keyboard": true
+  },
+  "KEY_F20": {
+    "key": "KEY_F20",
+    "value": "0x6f",
+    "keyboard": true
+  },
+  "KEY_F21": {
+    "key": "KEY_F21",
+    "value": "0x70",
+    "keyboard": true
+  },
+  "KEY_F22": {
+    "key": "KEY_F22",
+    "value": "0x71",
+    "keyboard": true
+  },
+  "KEY_F23": {
+    "key": "KEY_F23",
+    "value": "0x72",
+    "keyboard": true
+  },
+  "KEY_F24": {
+    "key": "KEY_F24",
+    "value": "0x73",
+    "keyboard": true
+  },
+  "KEY_OPEN": {
+    "key": "KEY_OPEN",
+    "value": "0x74",
+    "keyboard": true
+  },
+  "KEY_HELP": {
+    "key": "KEY_HELP",
+    "value": "0x75",
+    "keyboard": true
+  },
+  "KEY_PROPS": {
+    "key": "KEY_PROPS",
+    "value": "0x76",
+    "keyboard": true
+  },
+  "KEY_FRONT": {
+    "key": "KEY_FRONT",
+    "value": "0x77",
+    "keyboard": true
+  },
+  "KEY_STOP": {
+    "key": "KEY_STOP",
+    "value": "0x04",
+    "keyboard": false
+  },
+  "KEY_AGAIN": {
+    "key": "KEY_AGAIN",
+    "value": "0x79",
+    "keyboard": true
+  },
+  "KEY_UNDO": {
+    "key": "KEY_UNDO",
+    "value": "0x7a",
+    "keyboard": true
+  },
+  "KEY_CUT": {
+    "key": "KEY_CUT",
+    "value": "0x7b",
+    "keyboard": true
+  },
+  "KEY_COPY": {
+    "key": "KEY_COPY",
+    "value": "0x7c",
+    "keyboard": true
+  },
+  "KEY_PASTE": {
+    "key": "KEY_PASTE",
+    "value": "0x7d",
+    "keyboard": true
+  },
+  "KEY_FIND": {
+    "key": "KEY_FIND",
+    "value": "0x7e",
+    "keyboard": true
+  },
+  "KEY_MUTE": {
+    "key": "KEY_MUTE",
+    "value": "0x10",
+    "keyboard": false
+  },
+  "KEY_VOLUMEUP": {
+    "key": "KEY_VOLUMEUP",
+    "value": "0x20",
+    "keyboard": false
+  },
+  "KEY_VOLUMEDOWN": {
+    "key": "KEY_VOLUMEDOWN",
+    "value": "0x40",
+    "keyboard": false
+  },
+  "KEY_KPCOMMA": {
+    "key": "KEY_KPCOMMA",
+    "value": "0x85",
+    "keyboard": true
+  },
+  "KEY_KPLEFTPAREN": {
+    "key": "KEY_KPLEFTPAREN",
+    "value": "0xb6",
+    "keyboard": true
+  },
+  "KEY_KPRIGHTPAREN": {
+    "key": "KEY_KPRIGHTPAREN",
+    "value": "0xb7",
+    "keyboard": true
+  },
+  "KEY_MEDIA_PLAYPAUSE": {
+    "key": "KEY_MEDIA_PLAYPAUSE",
+    "value": "0x08",
+    "keyboard": false
+  },
+  "KEY_MEDIA_PREVIOUSSONG": {
+    "key": "KEY_MEDIA_PREVIOUSSONG",
+    "value": "0x02",
+    "keyboard": false
+  },
+  "KEY_MEDIA_NEXTSONG": {
+    "key": "KEY_MEDIA_NEXTSONG",
+    "value": "0x01",
+    "keyboard": false
+  }
 }
