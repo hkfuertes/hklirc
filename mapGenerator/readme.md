@@ -56,6 +56,6 @@ KEYS_TO_REMOVE=[
 ## Execution
 To run the program:
 ```
-python3 maptGenerator [mapping_file]
+$ python3 ./mapGenerator.py [mapping_file]
 ```
 If no `mapping_file` is pass the file will be generated in `../standard_map.json` 
