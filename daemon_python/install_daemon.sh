@@ -16,7 +16,7 @@ DEFAULT_PATH="/home/pi/hklirc/daemon_python"
 # Changing lirc_options.conf
 tput setaf 2; echo "[+] Changing lirc_options.conf";tput setaf 7;
 sed -i "s/^\(driver\s*=\s*\).*\$/\1$DRIVER/" /etc/lirc/lirc_options.conf
-sed -i "s/^\(device\s*=\s*\).*\$/\1$DEVICE/" /etc/lirc/lirc_options.conf
+sed -i "s|^\(device\s*=\s*\).*\$|\1$DEVICE|" /etc/lirc/lirc_options.conf
 
 # Adding pin configs to /boot/config.txt
 tput setaf 2; echo "[+] Adding pin configs to /boot/config.txt";tput setaf 7;
