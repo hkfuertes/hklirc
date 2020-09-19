@@ -9,3 +9,4 @@ Simple server solution to manage the mappings. To access it go to `http://10.42.
 ## TODO
 - Homepage
 - Deploy with gunicorn + nginx!
+- Remove dependency: https://github.com/d-demirci/django-adminlte3

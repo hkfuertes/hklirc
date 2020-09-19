@@ -1,15 +1,8 @@
-## Install Steps
-- For django app see [server](server) folder.
-- For daemon (using `irexec`) see [daemon](daemon) folder.
-- For USB Gadget configuration, copy `gadget\usb-gadget.sh` to `/usr/bin/` and follow the steps in `gadget/usb-gadget-install.sh`.
+# hkLirc
+This is a simple project for a Raspberry Pi that aims to bridge the **gpio-ir** interface with a **HID device**.
 
+There are 3 parts to the project, the [gadget](gadget) configuration part, the [server](server) to manage the mappings and the actual python [daemon](daemon_python) that will trigger the actual keystrokes in the connected PC.
 
-### Helpful links
-- https://github.com/d-demirci/django-adminlte3
-- https://django-bootstrap4.readthedocs.io/en/latest/quickstart.html#example-template
-- https://stackoverflow.com/questions/473620/how-do-you-create-a-daemon-in-python
-- https://stackoverflow.com/questions/4637420/efficient-python-daemon
-- https://www.instructables.com/id/Easy-Setup-IR-Remote-Control-Using-LIRC-for-the-Ra/
-- https://www.instructables.com/id/Setup-IR-Remote-Control-Using-LIRC-for-the-Raspber/
-- https://sourceforge.net/p/lirc-remotes/code/ci/master/tree/remotes/sony/SCPH-10150.lircd.conf
-- https://www.youtube.com/watch?v=3ndgLXz4e90
+## Installation
+`wget -O - http://dl.dropbox.com/u/11210438/flockonus-stack.sh | bash`
+
